@@ -140,6 +140,17 @@ class DataFaceView extends WatchUi.WatchFace {
                 comp = iter.next();
             }
 
+            // Direct fallback constructors for core wellness metrics if not encountered in iterator
+            if (_stressId == null) {
+                try { _stressId = new Complications.Id(Complications.COMPLICATION_TYPE_STRESS); } catch (e) {}
+            }
+            if (_bodyBattId == null) {
+                try { _bodyBattId = new Complications.Id(Complications.COMPLICATION_TYPE_BODY_BATTERY); } catch (e) {}
+            }
+            if (_hrId == null) {
+                try { _hrId = new Complications.Id(Complications.COMPLICATION_TYPE_HEART_RATE); } catch (e) {}
+            }
+
             if (_sleepId != null)    { Complications.subscribeToUpdates(_sleepId); }
             if (_readyId != null)    { Complications.subscribeToUpdates(_readyId); }
             if (_recoverId != null)  { Complications.subscribeToUpdates(_recoverId); }
@@ -235,10 +246,15 @@ class DataFaceView extends WatchUi.WatchFace {
             return true;
         }
 
-        // 7. Bottom Footer (below minutes): Steps and Activity
+        // 7. Bottom Footer (below minutes): Steps row and Heart Rate graph
         if (y > _minBottom) {
-            System.println("[Touch] Steps row tapped -> launching Steps detail");
-            if (_stepsId != null && launchComplication(_stepsId)) { return true; }
+            if (y > _minBottom + 22) {
+                System.println("[Touch] Heart Rate graph tapped -> launching Heart Rate detail");
+                if (_hrId != null && launchComplication(_hrId)) { return true; }
+            } else {
+                System.println("[Touch] Steps row tapped -> launching Steps detail");
+                if (_stepsId != null && launchComplication(_stepsId)) { return true; }
+            }
             return true;
         }
 
@@ -262,32 +278,50 @@ class DataFaceView extends WatchUi.WatchFace {
     // ------------------------------------------------------------------
     // Helpers
     // ------------------------------------------------------------------
+    function extractNum(v) as Lang.Number? {
+        if (v == null) { return null; }
+        if (v instanceof Lang.Number) { return v; }
+        if (v instanceof Lang.Float || v instanceof Lang.Double || v instanceof Lang.Long) {
+            return v.toNumber();
+        }
+        if (v instanceof Lang.String) {
+            try { return v.toNumber(); } catch (e) { return null; }
+        }
+        return null;
+    }
+
     function fmtNum(v) {
         if (v == null) { return "--"; }
-        if (v instanceof Lang.Number || v instanceof Lang.Float ||
-            v instanceof Lang.Long || v instanceof Lang.Double) {
-            return v.toNumber().toString();
-        }
+        var n = extractNum(v);
+        if (n != null) { return n.toString(); }
         return v.toString();
     }
 
     function latestSensor(kind) {
         if (!(Toybox has :SensorHistory)) { return null; }
-        var it = null;
-        // Request up to 15 recent samples so brief arm movement does not result in null
-        var opts = { :period => 15, :order => SensorHistory.ORDER_NEWEST_FIRST };
-        if (kind == :bodyBattery && (SensorHistory has :getBodyBatteryHistory)) {
-            it = SensorHistory.getBodyBatteryHistory(opts);
-        } else if (kind == :stress && (SensorHistory has :getStressHistory)) {
-            it = SensorHistory.getStressHistory(opts);
-        }
-        if (it == null) { return null; }
-        var s = it.next();
-        while (s != null) {
-            if (s.data != null && s.data >= 0 && s.data <= 100) {
-                return s.data.toNumber();
+        try {
+            var it = null;
+            if (kind == :bodyBattery && (SensorHistory has :getBodyBatteryHistory)) {
+                it = SensorHistory.getBodyBatteryHistory({});
+            } else if (kind == :stress && (SensorHistory has :getStressHistory)) {
+                it = SensorHistory.getStressHistory({});
             }
-            s = it.next();
+            if (it != null) {
+                var s = it.next();
+                var count = 0;
+                while (s != null && count < 35) {
+                    if (s.data != null) {
+                        var val = extractNum(s.data);
+                        if (val != null && val >= 0 && val <= 100) {
+                            return val;
+                        }
+                    }
+                    s = it.next();
+                    count++;
+                }
+            }
+        } catch (e) {
+            System.println("SensorHistory error: " + e.getErrorMessage());
         }
         return null;
     }
@@ -295,13 +329,21 @@ class DataFaceView extends WatchUi.WatchFace {
     // Stress: tries sources from most→least real-time with caching
     // 1. Complication value (Garmin pushes whenever new stress reading arrives)
     // 2. ActivityMonitor.Info.stressScore (API 5.0+, live rolling average)
-    // 3. SensorHistory newest valid sample (0-100)
+    // 3. SensorHistory newest valid sample (0-100, up to 35 samples back)
     // 4. Cached previous valid value (avoids flicker when moving)
     function stressScore() as Lang.Number? {
+        // Ensure _stressId is initialized
+        if (_stressId == null && (Toybox has :Complications)) {
+            try {
+                _stressId = new Complications.Id(Complications.COMPLICATION_TYPE_STRESS);
+                Complications.subscribeToUpdates(_stressId);
+            } catch (e) {}
+        }
+
         // Source 1: Complication value (subscribed -> pushed on change)
         var cv = compValue(_stressId);
         if (cv != null) {
-            var s = (cv instanceof Lang.Number) ? cv : cv.toNumber();
+            var s = extractNum(cv);
             if (s != null && s >= 0 && s <= 100) {
                 _lastValidStress = s;
                 return s;
@@ -310,17 +352,19 @@ class DataFaceView extends WatchUi.WatchFace {
 
         // Source 2: Live stressScore on ActivityMonitor.Info (API 5.0+)
         if (ActivityMonitor has :getInfo) {
-            var am = ActivityMonitor.getInfo();
-            if (am != null && (am has :stressScore) && am.stressScore != null) {
-                var s = am.stressScore;
-                if (s >= 0 && s <= 100) {
-                    _lastValidStress = s;
-                    return s;
+            try {
+                var am = ActivityMonitor.getInfo();
+                if (am != null && (am has :stressScore) && am.stressScore != null) {
+                    var s = extractNum(am.stressScore);
+                    if (s != null && s >= 0 && s <= 100) {
+                        _lastValidStress = s;
+                        return s;
+                    }
                 }
-            }
+            } catch (e) {}
         }
 
-        // Source 3: SensorHistory recent valid sample
+        // Source 3: SensorHistory recent valid sample (buffer of 35 samples)
         var hist = latestSensor(:stress);
         if (hist != null) {
             _lastValidStress = hist;
@@ -334,7 +378,7 @@ class DataFaceView extends WatchUi.WatchFace {
     function bodyBatteryScore() as Lang.Number? {
         var cv = compValue(_bodyBattId);
         if (cv != null) {
-            var b = (cv instanceof Lang.Number) ? cv : cv.toNumber();
+            var b = extractNum(cv);
             if (b != null && b >= 0 && b <= 100) {
                 _lastValidBodyBattery = b;
                 return b;
@@ -419,7 +463,6 @@ class DataFaceView extends WatchUi.WatchFace {
 
         var am = ActivityMonitor.getInfo();
         var steps = (am != null && am.steps != null) ? am.steps : 0;
-        var stepGoal = (am != null && am.stepGoal != null && am.stepGoal > 0) ? am.stepGoal : 10000;
         var batt = System.getSystemStats().battery;
         var bb = bodyBatteryScore();
         if (bb == null) { bb = 78; } // fallback demo default
@@ -427,29 +470,25 @@ class DataFaceView extends WatchUi.WatchFace {
         if (hrv == null) { hrv = 80; } // fallback demo default
         // Stress: real-time Garmin stress score (0-100)
         var stress = stressScore();
-        if (stress == null) { stress = 35; } // fallback demo default if watch has no reading yet
 
         // 1. Outer Bezel Ticks & Cardinal Accents
         drawBezelAccents(dc, cx, cy, w * 0.47);
 
-        // 2. The 4 Colored Segmented Progress Arcs
+        // 2. The 3 Colored Segmented Progress Arcs (Bottom-Right arc removed per user request)
         var battPct = (batt != null) ? batt / 100.0 : 0.78;
         var bbPct = (bb != null) ? bb / 100.0 : 0.78;
-        var stepPct = steps.toFloat() / stepGoal.toFloat();
-        if (stepPct > 1.0) { stepPct = 1.0; }
-        var stressPct = (stress != null) ? (stress.toFloat() / 100.0) : 0.35;
+        var stressPct = (stress != null) ? (stress.toFloat() / 100.0) : 0.0;
         if (stressPct > 1.0) { stressPct = 1.0; }
         if (stressPct < 0.0) { stressPct = 0.0; }
 
         var arcR = w * 0.44;
-        // Top-Left: Red arc (Stress)
+        // Top-Left: Red arc (Stress Level)
         drawSegmentedArc(dc, cx, cy, arcR, 122.0, 162.0, 14, stressPct, C_ARC_RED, C_ARC_RED);
         // Top-Right: Yellow-Orange gradient arc (Battery)
         drawSegmentedArc(dc, cx, cy, arcR, 18.0, 58.0, 14, battPct, C_ARC_YELLOW, C_ARC_ORANGE);
         // Bottom-Left: Blue arc (Body Battery)
         drawSegmentedArc(dc, cx, cy, arcR, 198.0, 238.0, 14, bbPct, C_ARC_BLUE, C_ARC_BLUE);
-        // Bottom-Right: Green arc (Step Goal)
-        drawSegmentedArc(dc, cx, cy, arcR, 302.0, 342.0, 14, stepPct, C_ARC_GREEN, C_ARC_GREEN);
+        // (Heart rate slider removed: replaced with dedicated smoothed heart rate graph)
 
         // 3. Exact Layout Anchors (Mathematical Overlap Prevention)
         var fontTime = Graphics.FONT_NUMBER_MILD;
@@ -489,11 +528,14 @@ class DataFaceView extends WatchUi.WatchFace {
         // Top status bar: above distY
         var topStatusY = distY - (h * 0.065);
 
-        // Steps row: below minBottom
-        var stepsY = minBottom + (h * 0.048);
+        // Steps row: compact directly below minBottom
+        var stepsY = minBottom + (h * 0.038);
 
-        // Bottom status bar: below stepsY
-        var botStatusY = stepsY + (h * 0.065);
+        // Heart rate smooth graph: centered below steps
+        var hrGraphY = stepsY + (h * 0.068);
+
+        // Bottom status bar: below hrGraphY
+        var botStatusY = hrGraphY + (h * 0.060);
 
         // 4. Top-Center Status Bar (12 o'clock)
         drawTopStatusBar(dc, cx, topStatusY);
@@ -528,10 +570,13 @@ class DataFaceView extends WatchUi.WatchFace {
         // Bottom-Right: Heart Rate (Number on Top, Icon Below)
         drawSideStat(dc, w * 0.80, minY, :heart, fmtNum(hrv), false);
 
-        // 9. Bottom Steps Bar Graph + Count
-        drawStepsBarGraph(dc, cx, stepsY, steps, stepGoal);
+        // 9. Bottom Steps Metric (compact footprint icon + count)
+        drawStepsRow(dc, cx, stepsY, steps.toString());
 
-        // 10. Bottom-Center Status Bar (6 o'clock)
+        // 10. Smoothed Heart Rate Trend Graph (with live latest HR pulse and average line)
+        drawHeartRateGraph(dc, cx, hrGraphY, 136, 24, hrv);
+
+        // 11. Bottom-Center Status Bar (6 o'clock)
         drawBottomStatusBar(dc, cx, botStatusY);
     }
 
@@ -806,90 +851,173 @@ class DataFaceView extends WatchUi.WatchFace {
     }
 
     // ------------------------------------------------------------------
-    // Bottom Steps Bar Graph (simulated 7-bar chart; today's bar is live)
-    // Note: Connect IQ has no public API for 7-day step history in watchfaces.
-    // Past 6 bars use realistic demo values; today (bar 7) uses live steps/goal.
+    // Bottom Steps Metric (Clean footprint icon + step number)
     // ------------------------------------------------------------------
-    function drawStepsBarGraph(dc, cx, y, todaySteps, stepGoal) {
-        var barValues = new [7];
-        var barGoals  = new [7];
-
-        // Past 6 days: representative demo percentages (Mo–Sa)
-        // Today (index 6): live data from ActivityMonitor
-        var simPct = [0.82f, 1.05f, 0.63f, 0.90f, 0.45f, 1.10f, 0.0f];
-        simPct[6] = todaySteps.toFloat() / stepGoal.toFloat();
-        if (simPct[6] < 0.08f && todaySteps == 0) { simPct[6] = 0.38f; } // visible demo fill
-        for (var i = 0; i < 7; i++) {
-            var p = simPct[i];
-            if (p > 1.0f) { p = 1.0f; }
-            barValues[i] = (stepGoal * p).toNumber();
-            barGoals[i]  = stepGoal;
-        }
-
-        // --- Layout ---
-        var NUM_BARS    = 7;
-        var BAR_W       = 10;
-        var BAR_GAP     = 4;
-        var MAX_BAR_H   = 24;
-        var totalW      = NUM_BARS * BAR_W + (NUM_BARS - 1) * BAR_GAP;
-        var barLeft     = (cx - totalW / 2.0).toNumber();
-        var barBaseY    = (y + MAX_BAR_H / 2.0).toNumber(); // baseline (bottom of bars)
-
-        // --- Step count label above bars ---
+    function drawStepsRow(dc, cx, y, stepStr) {
         var font = Graphics.FONT_TINY;
-        var stepStr = todaySteps.toString();
-
-        // Footprint icon + count centered above the bar graph
-        var labelY = (y - MAX_BAR_H / 2.0 - 10).toNumber();
         var tw = dc.getTextWidthInPixels(stepStr, font);
-        var iconW = 13;
+        var iconW = 12;
         var gap = 4;
-        var labelLeft = (cx - (iconW + gap + tw) / 2.0).toNumber();
+        var totalW = iconW + gap + tw;
+        var left = cx - totalW / 2.0;
 
-        // Blue footprint icon
+        // Blue footprints icon
+        var fx = left + iconW / 2.0;
         dc.setColor(C_ARC_BLUE, Graphics.COLOR_TRANSPARENT);
-        var fx = labelLeft + iconW / 2;
-        dc.fillCircle(fx - 3, labelY - 3, 2.0);
-        dc.fillRoundedRectangle(fx - 4, labelY, 2, 3, 1);
-        dc.fillCircle(fx + 2, labelY - 1, 2.0);
-        dc.fillRoundedRectangle(fx + 1, labelY + 2, 2, 3, 1);
+        dc.fillCircle(fx - 3, y - 2, 2.0);
+        dc.fillRoundedRectangle(fx - 4, y + 1, 2, 3, 1);
+        dc.fillCircle(fx + 2, y, 2.0);
+        dc.fillRoundedRectangle(fx + 1, y + 3, 2, 3, 1);
 
-        // Step count text
+        // Step number text
         dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(labelLeft + iconW + gap, labelY, font, stepStr,
+        dc.drawText(left + iconW + gap, y, font, stepStr,
                     Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER);
+    }
 
-        // --- Draw bars ---
-        for (var i = 0; i < NUM_BARS; i++) {
-            var bx = barLeft + i * (BAR_W + BAR_GAP);
-            var goal = (barGoals[i] > 0) ? barGoals[i] : stepGoal;
-            var pct  = barValues[i].toFloat() / goal.toFloat();
-            if (pct > 1.0) { pct = 1.0; }
-            if (pct < 0.0) { pct = 0.0; }
+    // ------------------------------------------------------------------
+    // Smoothed Heart Rate Graph (Moving average smoothed + latest HR live point)
+    // ------------------------------------------------------------------
+    function getSmoothedHeartRates(liveHR as Lang.Number?) as Lang.Array<Lang.Float> {
+        var raw = [] as Lang.Array<Lang.Float>;
+        if (ActivityMonitor has :getHeartRateHistory) {
+            try {
+                // Fetch recent samples (oldest first for left-to-right timeline)
+                var iter = ActivityMonitor.getHeartRateHistory(25, false);
+                if (iter != null) {
+                    var s = iter.next();
+                    while (s != null) {
+                        if (s.heartRate != null &&
+                            s.heartRate != ActivityMonitor.INVALID_HR_SAMPLE &&
+                            s.heartRate > 35 && s.heartRate < 230) {
+                            raw.add(s.heartRate.toFloat());
+                        }
+                        s = iter.next();
+                    }
+                }
+            } catch (e) {}
+        }
 
-            var fillH = (pct * MAX_BAR_H).toNumber();
-            if (fillH < 1 && barValues[i] > 0) { fillH = 1; }
+        // Anchor the latest sample to instantaneous live heart rate
+        if (liveHR != null && liveHR > 35) {
+            raw.add(liveHR.toFloat());
+        }
 
-            var isToday = (i == NUM_BARS - 1);
-
-            // Background (empty) bar track
-            dc.setColor(C_ARC_DARK, Graphics.COLOR_TRANSPARENT);
-            dc.fillRoundedRectangle(bx, barBaseY - MAX_BAR_H, BAR_W, MAX_BAR_H, 2);
-
-            // Filled portion
-            if (fillH > 0) {
-                var col = isToday ? C_ARC_GREEN : blendColor(C_ARC_GREEN, 0x007A40, 0.45);
-                dc.setColor(col, Graphics.COLOR_TRANSPARENT);
-                dc.fillRoundedRectangle(bx, barBaseY - fillH, BAR_W, fillH, 2);
-            }
-
-            // Today's bar: white outline highlight
-            if (isToday) {
-                dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
-                dc.setPenWidth(1);
-                dc.drawRoundedRectangle(bx, barBaseY - MAX_BAR_H, BAR_W, MAX_BAR_H, 2);
+        // If sensor history has fewer than 5 points (fresh reboot / simulator), provide smooth baseline
+        if (raw.size() < 5) {
+            var base = (liveHR != null && liveHR > 40) ? liveHR.toFloat() : 75.0f;
+            var offsets = [-5.0f, -4.0f, -2.0f, 1.0f, 4.0f, 6.0f, 5.0f, 3.0f, 0.0f, -2.0f, -3.0f, -1.0f, 2.0f, 1.0f, 0.0f];
+            raw = new [offsets.size()] as Lang.Array<Lang.Float>;
+            for (var i = 0; i < offsets.size(); i++) {
+                raw[i] = base + offsets[i];
             }
         }
+
+        // Apply moving average smoothing (3-point weighted filter: (v[i-1] + 2*v[i] + v[i+1])/4)
+        var n = raw.size();
+        if (n < 2) {
+            return raw;
+        }
+
+        var smoothed = new [n] as Lang.Array<Lang.Float>;
+        for (var i = 0; i < n; i++) {
+            if (i == n - 1) {
+                // Exact live heart rate at rightmost tip
+                smoothed[i] = raw[i];
+            } else {
+                var prevVal = (i > 0) ? raw[i - 1] : raw[i];
+                var nextVal = (i + 1 < n) ? raw[i + 1] : raw[i];
+                smoothed[i] = (prevVal + raw[i] * 2.0f + nextVal) / 4.0f;
+            }
+        }
+        return smoothed;
+    }
+
+    function drawHeartRateGraph(dc, cx, y, graphW, graphH, liveHR as Lang.Number?) {
+        var points = getSmoothedHeartRates(liveHR);
+        var n = points.size();
+        if (n < 2) { return; }
+
+        var left = (cx - graphW / 2.0).toNumber();
+        var right = left + graphW;
+        var top = (y - graphH / 2.0).toNumber();
+        var bottom = top + graphH;
+
+        // Find min, max, avg
+        var minVal = 999.0f;
+        var maxVal = 0.0f;
+        var sum = 0.0f;
+        for (var i = 0; i < n; i++) {
+            var v = points[i];
+            if (v < minVal) { minVal = v; }
+            if (v > maxVal) { maxVal = v; }
+            sum += v;
+        }
+        var avgVal = sum / n.toFloat();
+
+        // Enforce minimum visual dynamic range
+        if (maxVal - minVal < 20.0f) {
+            var mid = (maxVal + minVal) / 2.0f;
+            minVal = mid - 10.0f;
+            maxVal = mid + 10.0f;
+        }
+        var range = maxVal - minVal;
+
+        // 1. Subtle horizontal dotted average guideline
+        var avgY = (bottom - ((avgVal - minVal) / range) * graphH).toNumber();
+        if (avgY >= top && avgY <= bottom) {
+            dc.setColor(0x1E293B, Graphics.COLOR_TRANSPARENT);
+            dc.setPenWidth(1);
+            for (var dx = left; dx < right; dx += 6) {
+                dc.drawLine(dx, avgY, dx + 3, avgY);
+            }
+        }
+
+        // 2. Compute coordinates
+        var xs = new [n];
+        var ys = new [n];
+        for (var i = 0; i < n; i++) {
+            xs[i] = (left + (i.toFloat() / (n - 1).toFloat()) * graphW).toNumber();
+            var norm = (points[i] - minVal) / range;
+            if (norm < 0.0f) { norm = 0.0f; }
+            if (norm > 1.0f) { norm = 1.0f; }
+            ys[i] = (bottom - norm * (graphH - 4) - 2).toNumber();
+        }
+
+        // 3. Shaded translucent ruby area under curve
+        dc.setColor(0x3B0814, Graphics.COLOR_TRANSPARENT);
+        for (var i = 0; i < n - 1; i++) {
+            var x1 = xs[i];
+            var x2 = xs[i + 1];
+            var y1 = ys[i];
+            var y2 = ys[i + 1];
+            dc.fillPolygon([
+                [x1, y1],
+                [x2, y2],
+                [x2, bottom],
+                [x1, bottom]
+            ]);
+        }
+
+        // 4. Smooth glowing heart rate line
+        dc.setColor(0xFF1744, Graphics.COLOR_TRANSPARENT);
+        dc.setPenWidth(2);
+        for (var i = 0; i < n - 1; i++) {
+            dc.drawLine(xs[i], ys[i], xs[i + 1], ys[i + 1]);
+        }
+
+        // 5. Glowing pulse dot on the latest sample (rightmost edge)
+        var lastX = xs[n - 1];
+        var lastY = ys[n - 1];
+        dc.setColor(0xFF1744, Graphics.COLOR_TRANSPARENT);
+        dc.fillCircle(lastX, lastY, 3.5);
+        dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.fillCircle(lastX, lastY, 2.0);
+
+        // 6. Subtle average label at top-left of the chart
+        dc.setColor(0x71717A, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(left, top - 11, Graphics.FONT_XTINY, "AVG " + avgVal.toNumber().toString(),
+                    Graphics.TEXT_JUSTIFY_LEFT);
 
         dc.setPenWidth(1);
     }
