@@ -9,6 +9,10 @@ class DataFaceApp extends Application.AppBase {
     }
 
     function getInitialView() {
-        return [ new DataFaceView() ];
+        var view = new DataFaceView();
+        if (WatchUi has :WatchFaceDelegate) {
+            return [ view, new DataFaceDelegate(view) ];
+        }
+        return [ view ];
     }
 }
