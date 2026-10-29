@@ -217,32 +217,22 @@ class DataFaceView extends WatchUi.WatchFace {
             return false;
         }
 
-        // 5. Center Divider Bar
+        // 5. Center Divider Bar (Alarms/Bluetooth on left, DND/Weather on right)
         if (y >= _y1 - 8 && y <= _y2 + 8) {
-            if (x < _cx - 40) {
-                System.println("[Touch] Alarms icon tapped");
-                // Fall back to calendar or timer if alarm complication is not direct
+            if (x < _cx) {
+                System.println("[Touch] Alarms / Status tapped");
                 if (_calendarId != null && launchComplication(_calendarId)) { return true; }
-            } else if (x > _cx + 40) {
-                System.println("[Touch] Weather/Temp tapped -> launching Weather detail");
-                if (_weatherId != null && launchComplication(_weatherId)) { return true; }
             } else {
-                System.println("[Touch] Date tapped -> launching Calendar/Agenda detail");
-                if (_calendarId != null && launchComplication(_calendarId)) { return true; }
+                System.println("[Touch] Weather / Temp tapped -> launching Weather detail");
+                if (_weatherId != null && launchComplication(_weatherId)) { return true; }
             }
             return true;
         }
 
-        // 6. Top Header (above hours): Status bar and Distance
+        // 6. Top Header (above hours): Date
         if (y < _hourTop) {
-            if (y < _h * 0.16) {
-                System.println("[Touch] Top Status Bar tapped -> launching Recovery/Sleep detail");
-                if (_recoverId != null && launchComplication(_recoverId)) { return true; }
-                if (_sleepId != null && launchComplication(_sleepId)) { return true; }
-            } else {
-                System.println("[Touch] Distance row tapped -> launching Distance/Activity detail");
-                if (_distanceId != null && launchComplication(_distanceId)) { return true; }
-            }
+            System.println("[Touch] Date header tapped -> launching Calendar detail");
+            if (_calendarId != null && launchComplication(_calendarId)) { return true; }
             return true;
         }
 
@@ -522,11 +512,8 @@ class DataFaceView extends WatchUi.WatchFace {
         _y1 = y1;
         _y2 = y2;
 
-        // Distance row: above hourTop
-        var distY = hourTop - (h * 0.045);
-
-        // Top status bar: above distY
-        var topStatusY = distY - (h * 0.065);
+        // Top Date Header: placed comfortably inside the slider opening, above hourTop
+        var topDateY = hourTop - (h * 0.052);
 
         // Steps row: compact directly below minBottom
         var stepsY = minBottom + (h * 0.038);
@@ -537,20 +524,8 @@ class DataFaceView extends WatchUi.WatchFace {
         // Bottom status bar: below hrGraphY
         var botStatusY = hrGraphY + (h * 0.060);
 
-        // 4. Top-Center Status Bar (12 o'clock)
-        drawTopStatusBar(dc, cx, topStatusY);
-
-        // 5. Distance / Swimmer Metric (Above Hours)
-        var distStr = "0.0M";
-        if (am != null && (am has :distance) && am.distance != null) {
-            var isMetric = (System.getDeviceSettings().distanceUnits == System.UNIT_METRIC);
-            if (isMetric) {
-                distStr = (am.distance / 100000.0).format("%.1f") + "KM";
-            } else {
-                distStr = (am.distance / 160934.4).format("%.1f") + "M";
-            }
-        }
-        drawDistanceRow(dc, cx, distY, distStr);
+        // 4. Top Date Header (12 o'clock)
+        drawTopDate(dc, cx, topDateY);
 
         // 6. Center Stacked Time with True Gradient (Zero overlap)
         drawGradientText(dc, cx, hourY, fontTime, hStr, C_HOUR_TOP, C_HOUR_BOT);
@@ -667,67 +642,19 @@ class DataFaceView extends WatchUi.WatchFace {
     }
 
     // ------------------------------------------------------------------
-    // Top Status Bar (Red trend, Moon Phase, Yellow Bolt)
+    // Top Date Header (Replaces swim & 3-icon group at 12 o'clock)
     // ------------------------------------------------------------------
-    function drawTopStatusBar(dc, cx, y) {
-        // Red Trend arrow (zigzag)
-        dc.setColor(C_ARC_RED, Graphics.COLOR_TRANSPARENT);
-        dc.setPenWidth(2);
-        var tx = cx - 24;
-        dc.drawLine(tx - 6, y + 4, tx - 2, y);
-        dc.drawLine(tx - 2, y, tx + 1, y + 3);
-        dc.drawLine(tx + 1, y + 3, tx + 6, y - 4);
-        dc.drawLine(tx + 2, y - 4, tx + 6, y - 4);
-        dc.drawLine(tx + 6, y - 4, tx + 6, y);
+    function drawTopDate(dc, cx, y) {
+        var info = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+        var dateStr = (info.day_of_week + " " + info.day.format("%02d") + " " + info.month + ".").toUpper();
 
-        // Moon Phase (half moon: left half white, right half dark)
-        var mr = 7;
         dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.fillCircle(cx, y, mr);
-        dc.setColor(C_BG, Graphics.COLOR_TRANSPARENT);
-        dc.fillRectangle(cx, y - mr, mr + 2, mr * 2 + 2);
-        dc.setColor(0x8E9BAE, Graphics.COLOR_TRANSPARENT);
-        dc.setPenWidth(1);
-        dc.drawCircle(cx, y, mr);
-
-        // Yellow Lightning Bolt
-        dc.setColor(C_ARC_YELLOW, Graphics.COLOR_TRANSPARENT);
-        var bx = cx + 24;
-        dc.fillPolygon([
-            [bx + 1, y - 7], [bx - 4, y], [bx - 1, y],
-            [bx - 2, y + 7], [bx + 4, y - 1], [bx + 1, y - 1]
-        ]);
+        dc.drawText(cx, y, Graphics.FONT_TINY, dateStr,
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
 
     // ------------------------------------------------------------------
-    // Swimmer & Distance Row
-    // ------------------------------------------------------------------
-    function drawDistanceRow(dc, cx, y, distStr) {
-        var font = Graphics.FONT_TINY;
-        var tw = dc.getTextWidthInPixels(distStr, font);
-        var iconW = 16;
-        var gap = 5;
-        var totalW = iconW + gap + tw;
-        var left = cx - totalW / 2.0;
-
-        // Swimmer icon
-        var ix = left + iconW / 2.0;
-        dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.fillCircle(ix - 1, y - 4, 2.5); // head
-        dc.setPenWidth(2);
-        dc.drawLine(ix - 5, y - 1, ix + 5, y - 3); // torso & arm
-        // Water wave underneath
-        dc.drawLine(ix - 7, y + 3, ix - 3, y + 1);
-        dc.drawLine(ix - 3, y + 1, ix + 2, y + 4);
-        dc.drawLine(ix + 2, y + 4, ix + 6, y + 2);
-
-        // Distance text
-        dc.drawText(left + iconW + gap, y, font, distStr,
-                    Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER);
-    }
-
-    // ------------------------------------------------------------------
-    // Horizontal Divider Bar & Date Row
+    // Horizontal Center Divider Bar
     // ------------------------------------------------------------------
     function drawCenterDividerBar(dc, cx, cy, barW) {
         var halfW = barW / 2.0;
@@ -744,8 +671,8 @@ class DataFaceView extends WatchUi.WatchFace {
         dc.drawLine(cx - halfW, cy - 4, cx - halfW + 10, cy - 4);
         dc.drawLine(cx + halfW - 10, cy - 4, cx + halfW, cy - 4);
 
-        // Cyan Alarm Clock icon
-        var ax = cx - halfW + 28;
+        // Cyan Alarm Clock icon (left of center)
+        var ax = cx - 44;
         dc.setColor(C_CYAN_ACCENT, Graphics.COLOR_TRANSPARENT);
         dc.drawCircle(ax, cy, 6);
         dc.setPenWidth(1);
@@ -755,7 +682,7 @@ class DataFaceView extends WatchUi.WatchFace {
         dc.drawLine(ax + 5, cy - 6, ax + 3, cy - 4); // right bell
 
         // Cyan Bluetooth icon
-        var bx = ax + 18;
+        var bx = cx - 20;
         dc.setPenWidth(2);
         dc.drawLine(bx, cy - 6, bx, cy + 6);
         dc.drawLine(bx, cy - 6, bx + 3, cy - 3);
@@ -763,23 +690,20 @@ class DataFaceView extends WatchUi.WatchFace {
         dc.drawLine(bx - 3, cy - 3, bx + 3, cy + 3);
         dc.drawLine(bx + 3, cy + 3, bx, cy + 6);
 
-        // Date String (e.g. "Jeu 02 Jan." or English equivalent)
-        var info = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
-        var dateStr = info.day_of_week + " " + info.day.format("%02d") + " " + info.month + ".";
-        dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx + 6, cy, Graphics.FONT_TINY, dateStr,
-                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        // Subtle center separator dot
+        dc.setColor(C_LINE, Graphics.COLOR_TRANSPARENT);
+        dc.fillCircle(cx, cy, 2);
 
-        // Blue DND / circle-minus badge
-        var dx = cx + halfW - 32;
+        // Blue DND / circle-minus badge (right of center)
+        var dx = cx + 20;
         dc.setColor(C_BLUE_BADGE, Graphics.COLOR_TRANSPARENT);
         dc.fillCircle(dx, cy, 7);
         dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(2);
         dc.drawLine(dx - 4, cy, dx + 4, cy);
 
-        // Number right of badge (e.g. "28" temperature or date day)
-        var tempVal = info.day.toString();
+        // Temperature right of badge (e.g. "28°")
+        var tempVal = "28°";
         if (Toybox has :Weather) {
             var cond = Weather.getCurrentConditions();
             if (cond != null && cond.temperature != null) {
@@ -787,10 +711,10 @@ class DataFaceView extends WatchUi.WatchFace {
                 if (System.getDeviceSettings().temperatureUnits == System.UNIT_STATUTE) {
                     t = t * 9.0 / 5.0 + 32;
                 }
-                tempVal = t.toNumber().toString();
+                tempVal = t.toNumber().toString() + "°";
             }
         }
-        dc.drawText(dx + 13, cy, Graphics.FONT_TINY, tempVal,
+        dc.drawText(dx + 12, cy, Graphics.FONT_TINY, tempVal,
                     Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER);
     }
 
