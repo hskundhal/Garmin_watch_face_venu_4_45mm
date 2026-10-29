@@ -66,6 +66,10 @@ class DataFaceView extends WatchUi.WatchFace {
     hidden var _distanceId as Complications.Id? = null;
     hidden var _calendarId as Complications.Id? = null;
 
+    // Cached sensor values to avoid momentary flickering during movement
+    hidden var _lastValidStress as Lang.Number? = null;
+    hidden var _lastValidBodyBattery as Lang.Number? = null;
+
     function initialize() {
         WatchFace.initialize();
         findComplications();
@@ -173,11 +177,11 @@ class DataFaceView extends WatchUi.WatchFace {
     function handlePress(x as Lang.Number, y as Lang.Number) as Lang.Boolean {
         if (_w == 0 || _h == 0) { return false; }
 
-        // 1. Top-Left: Readiness / Stress
+        // 1. Top-Left: Stress
         if (x < _cx - 30 && y >= _hourTop && y <= _y1) {
-            System.println("[Touch] Top-Left tapped -> launching Readiness/Stress detail");
-            if (_readyId != null && launchComplication(_readyId)) { return true; }
+            System.println("[Touch] Top-Left tapped -> launching Stress detail");
             if (_stressId != null && launchComplication(_stressId)) { return true; }
+            if (_readyId != null && launchComplication(_readyId)) { return true; }
             return false;
         }
 
@@ -270,7 +274,8 @@ class DataFaceView extends WatchUi.WatchFace {
     function latestSensor(kind) {
         if (!(Toybox has :SensorHistory)) { return null; }
         var it = null;
-        var opts = { :period => 1, :order => SensorHistory.ORDER_NEWEST_FIRST };
+        // Request up to 15 recent samples so brief arm movement does not result in null
+        var opts = { :period => 15, :order => SensorHistory.ORDER_NEWEST_FIRST };
         if (kind == :bodyBattery && (SensorHistory has :getBodyBatteryHistory)) {
             it = SensorHistory.getBodyBatteryHistory(opts);
         } else if (kind == :stress && (SensorHistory has :getStressHistory)) {
@@ -278,31 +283,69 @@ class DataFaceView extends WatchUi.WatchFace {
         }
         if (it == null) { return null; }
         var s = it.next();
-        if (s != null && s.data != null) { return s.data.toNumber(); }
+        while (s != null) {
+            if (s.data != null && s.data >= 0 && s.data <= 100) {
+                return s.data.toNumber();
+            }
+            s = it.next();
+        }
         return null;
     }
 
-    // Stress: tries sources from most→least real-time
-    // 1. ActivityMonitor.Info.stressScore  (API 4.1.0+, live)
-    // 2. Complications value               (pushed on change)
-    // 3. SensorHistory newest sample       (3-4 min cadence, last resort)
+    // Stress: tries sources from most→least real-time with caching
+    // 1. Complication value (Garmin pushes whenever new stress reading arrives)
+    // 2. ActivityMonitor.Info.stressScore (API 5.0+, live rolling average)
+    // 3. SensorHistory newest valid sample (0-100)
+    // 4. Cached previous valid value (avoids flicker when moving)
     function stressScore() as Lang.Number? {
-        // Source 1: live stressScore on ActivityMonitor.Info (API 4.1+)
+        // Source 1: Complication value (subscribed -> pushed on change)
+        var cv = compValue(_stressId);
+        if (cv != null) {
+            var s = (cv instanceof Lang.Number) ? cv : cv.toNumber();
+            if (s != null && s >= 0 && s <= 100) {
+                _lastValidStress = s;
+                return s;
+            }
+        }
+
+        // Source 2: Live stressScore on ActivityMonitor.Info (API 5.0+)
         if (ActivityMonitor has :getInfo) {
             var am = ActivityMonitor.getInfo();
             if (am != null && (am has :stressScore) && am.stressScore != null) {
                 var s = am.stressScore;
-                if (s >= 0 && s <= 100) { return s; }
+                if (s >= 0 && s <= 100) {
+                    _lastValidStress = s;
+                    return s;
+                }
             }
         }
-        // Source 2: complication value (subscribed → pushed on each measurement)
-        var cv = compValue(_stressId);
-        if (cv != null) {
-            var s = cv.toNumber();
-            if (s >= 0 && s <= 100) { return s; }
+
+        // Source 3: SensorHistory recent valid sample
+        var hist = latestSensor(:stress);
+        if (hist != null) {
+            _lastValidStress = hist;
+            return hist;
         }
-        // Source 3: SensorHistory newest sample (slowest cadence, fallback)
-        return latestSensor(:stress);
+
+        // Source 4: Cached last known valid stress
+        return _lastValidStress;
+    }
+
+    function bodyBatteryScore() as Lang.Number? {
+        var cv = compValue(_bodyBattId);
+        if (cv != null) {
+            var b = (cv instanceof Lang.Number) ? cv : cv.toNumber();
+            if (b != null && b >= 0 && b <= 100) {
+                _lastValidBodyBattery = b;
+                return b;
+            }
+        }
+        var bb = latestSensor(:bodyBattery);
+        if (bb != null) {
+            _lastValidBodyBattery = bb;
+            return bb;
+        }
+        return _lastValidBodyBattery;
     }
 
     function heartRate() {
@@ -378,15 +421,13 @@ class DataFaceView extends WatchUi.WatchFace {
         var steps = (am != null && am.steps != null) ? am.steps : 0;
         var stepGoal = (am != null && am.stepGoal != null && am.stepGoal > 0) ? am.stepGoal : 10000;
         var batt = System.getSystemStats().battery;
-        var bb = latestSensor(:bodyBattery);
+        var bb = bodyBatteryScore();
         if (bb == null) { bb = 78; } // fallback demo default
         var hrv = heartRate();
         if (hrv == null) { hrv = 80; } // fallback demo default
-        // Stress: multi-source (live ActivityMonitor > complication > SensorHistory)
-        var st = stressScore();
-        // Readiness: prefer dedicated complication, fall back to stress, then null (shows --)
-        var ready = compValue(_readyId);
-        if (ready == null) { ready = st; }
+        // Stress: real-time Garmin stress score (0-100)
+        var stress = stressScore();
+        if (stress == null) { stress = 35; } // fallback demo default if watch has no reading yet
 
         // 1. Outer Bezel Ticks & Cardinal Accents
         drawBezelAccents(dc, cx, cy, w * 0.47);
@@ -396,11 +437,13 @@ class DataFaceView extends WatchUi.WatchFace {
         var bbPct = (bb != null) ? bb / 100.0 : 0.78;
         var stepPct = steps.toFloat() / stepGoal.toFloat();
         if (stepPct > 1.0) { stepPct = 1.0; }
-        var readyPct = (ready != null) ? ready / 100.0 : 0.85;
+        var stressPct = (stress != null) ? (stress.toFloat() / 100.0) : 0.35;
+        if (stressPct > 1.0) { stressPct = 1.0; }
+        if (stressPct < 0.0) { stressPct = 0.0; }
 
         var arcR = w * 0.44;
-        // Top-Left: Red arc (Readiness/Stress)
-        drawSegmentedArc(dc, cx, cy, arcR, 122.0, 162.0, 14, readyPct, C_ARC_RED, C_ARC_RED);
+        // Top-Left: Red arc (Stress)
+        drawSegmentedArc(dc, cx, cy, arcR, 122.0, 162.0, 14, stressPct, C_ARC_RED, C_ARC_RED);
         // Top-Right: Yellow-Orange gradient arc (Battery)
         drawSegmentedArc(dc, cx, cy, arcR, 18.0, 58.0, 14, battPct, C_ARC_YELLOW, C_ARC_ORANGE);
         // Bottom-Left: Blue arc (Body Battery)
@@ -476,8 +519,8 @@ class DataFaceView extends WatchUi.WatchFace {
 
         // 8. Four Side Telemetry Complications
         // Positioned at w * 0.20 and w * 0.80 to leave generous horizontal margin from digits
-        // Top-Left: Readiness (Icon on Top, Number Below)
-        drawSideStat(dc, w * 0.20, hourY, :activity, fmtNum(ready), true);
+        // Top-Left: Stress (Icon on Top, Number Below)
+        drawSideStat(dc, w * 0.20, hourY, :activity, fmtNum(stress), true);
         // Top-Right: Battery (Icon on Top, Number Below)
         drawSideStat(dc, w * 0.80, hourY, :battery, fmtNum(batt), true);
         // Bottom-Left: Body Battery (Number on Top, Icon Below)
