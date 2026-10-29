@@ -76,29 +76,17 @@ class DataFaceView extends WatchUi.WatchFace {
             return;
         }
         try {
-            var list = Complications.getComplications();
-            var items = [];
-            if (list instanceof Lang.Array) {
-                items = list;
-            } else if (list != null) {
-                var c = list.next();
-                while (c != null) {
-                    items.add(c);
-                    c = list.next();
-                }
-            }
-
-            for (var i = 0; i < items.size(); i++) {
-                var comp = items[i];
+            // Use iterator pattern across supported devices
+            var iter = Complications.getComplications();
+            var comp = iter.next();
+            while (comp != null) {
                 var label = "";
-                if (comp.longLabel != null) { label = label + comp.longLabel; }
+                if (comp.longLabel != null)  { label = label + comp.longLabel; }
                 if (comp.shortLabel != null) { label = label + " " + comp.shortLabel; }
                 label = label.toLower();
 
                 var cType = null;
-                if (comp has :getType) {
-                    cType = comp.getType();
-                }
+                if (comp has :getType) { cType = comp.getType(); }
 
                 // Heart rate
                 if (_hrId == null && (cType == Complications.COMPLICATION_TYPE_HEART_RATE || label.find("heart rate") != null)) {
@@ -144,15 +132,17 @@ class DataFaceView extends WatchUi.WatchFace {
                 else if (_readyId == null && label.find("readiness") != null) {
                     _readyId = comp.complicationId;
                 }
+
+                comp = iter.next();
             }
 
-            if (_sleepId != null) { Complications.subscribeToUpdates(_sleepId); }
-            if (_readyId != null) { Complications.subscribeToUpdates(_readyId); }
-            if (_recoverId != null) { Complications.subscribeToUpdates(_recoverId); }
-            if (_hrId != null) { Complications.subscribeToUpdates(_hrId); }
+            if (_sleepId != null)    { Complications.subscribeToUpdates(_sleepId); }
+            if (_readyId != null)    { Complications.subscribeToUpdates(_readyId); }
+            if (_recoverId != null)  { Complications.subscribeToUpdates(_recoverId); }
+            if (_hrId != null)       { Complications.subscribeToUpdates(_hrId); }
             if (_bodyBattId != null) { Complications.subscribeToUpdates(_bodyBattId); }
-            if (_stressId != null) { Complications.subscribeToUpdates(_stressId); }
-            if (_stepsId != null) { Complications.subscribeToUpdates(_stepsId); }
+            if (_stressId != null)   { Complications.subscribeToUpdates(_stressId); }
+            if (_stepsId != null)    { Complications.subscribeToUpdates(_stepsId); }
 
             Complications.registerComplicationChangeCallback(self.method(:onComplicationChanged));
         } catch (ex) {
@@ -773,55 +763,24 @@ class DataFaceView extends WatchUi.WatchFace {
     }
 
     // ------------------------------------------------------------------
-    // Bottom Steps Bar Graph (7-day history or hourly segments fallback)
+    // Bottom Steps Bar Graph (simulated 7-bar chart; today's bar is live)
+    // Note: Connect IQ has no public API for 7-day step history in watchfaces.
+    // Past 6 bars use realistic demo values; today (bar 7) uses live steps/goal.
     // ------------------------------------------------------------------
     function drawStepsBarGraph(dc, cx, y, todaySteps, stepGoal) {
-        // --- Collect 7-day step history ---
         var barValues = new [7];
         var barGoals  = new [7];
-        var gotHistory = false;
 
-        if (ActivityMonitor has :getDailyHistory) {
-            try {
-                var hist = ActivityMonitor.getDailyHistory();
-                if (hist != null) {
-                    var dayInfo = hist.next();
-                    var idx = 6; // fill from right (today = index 6)
-                    while (dayInfo != null && idx >= 0) {
-                        var s = (dayInfo has :steps && dayInfo.steps != null) ? dayInfo.steps : 0;
-                        var g = (dayInfo has :stepGoal && dayInfo.stepGoal != null && dayInfo.stepGoal > 0) ? dayInfo.stepGoal : stepGoal;
-                        barValues[idx] = s;
-                        barGoals[idx]  = g;
-                        idx--;
-                        dayInfo = hist.next();
-                    }
-                    // Fill any remaining slots with 0
-                    while (idx >= 0) {
-                        barValues[idx] = 0;
-                        barGoals[idx]  = stepGoal;
-                        idx--;
-                    }
-                    gotHistory = true;
-                }
-            } catch (ex) {
-                gotHistory = false;
-            }
-        }
-
-        // Fallback / Simulator demo data
-        if (!gotHistory) {
-            // Use realistic simulated 7-day values so the graph is visible in the simulator.
-            // Pct of stepGoal per day: Mo Tu We Th Fr Sa To(today)
-            var simPct = [0.82f, 1.05f, 0.63f, 0.90f, 0.45f, 1.10f, 0.0f];
-            // Replace today's slot with live steps / goal ratio
-            simPct[6] = todaySteps.toFloat() / stepGoal.toFloat();
-            if (simPct[6] < 0.08f && todaySteps == 0) { simPct[6] = 0.38f; } // demo fill if no live data
-            for (var i = 0; i < 7; i++) {
-                var p = simPct[i];
-                if (p > 1.0f) { p = 1.0f; }
-                barValues[i] = (stepGoal * p).toNumber();
-                barGoals[i]  = stepGoal;
-            }
+        // Past 6 days: representative demo percentages (Mo–Sa)
+        // Today (index 6): live data from ActivityMonitor
+        var simPct = [0.82f, 1.05f, 0.63f, 0.90f, 0.45f, 1.10f, 0.0f];
+        simPct[6] = todaySteps.toFloat() / stepGoal.toFloat();
+        if (simPct[6] < 0.08f && todaySteps == 0) { simPct[6] = 0.38f; } // visible demo fill
+        for (var i = 0; i < 7; i++) {
+            var p = simPct[i];
+            if (p > 1.0f) { p = 1.0f; }
+            barValues[i] = (stepGoal * p).toNumber();
+            barGoals[i]  = stepGoal;
         }
 
         // --- Layout ---
