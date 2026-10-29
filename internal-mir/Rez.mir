@@ -1,0 +1,1505 @@
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,9,27,39]; @symbol_type<0> = [ResourceId,9,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 12; @symbol_moduledef = [Strings,12,11,18]; ]
+    module Strings {
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 13; @position = 27; initialized = true; @symbol_vardef = [AppName,13,27,34]; @symbol_type<0> = [ResourceId,13,38,48]; ]
+        var AppName as ResourceId;
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 16; @symbol_moduledef = [Styles,16,11,17]; ]
+    module Styles {
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 16; ]
+        <init> {
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 17; @symbol_moduledef = [prompt_font_enhanced_readability__body_with_title,17,15,64]; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 17; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 18; @position = 18; @symbol_constdef = [exclude,18,18,25]; @symbol_type<0> = [Boolean,18,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 21; @symbol_moduledef = [system_size__menu_header,21,15,39]; ]
+        module system_size__menu_header {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 21; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 22; @position = 18; @symbol_constdef = [width,22,18,23]; @symbol_type<0> = [Number,22,27,33]; ]
+            const width as Number = 454;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 23; @position = 18; @symbol_constdef = [height,23,18,24]; @symbol_type<0> = [Number,23,28,34]; ]
+            const height as Number = 114;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 26; @symbol_moduledef = [system_loc__hint_button_left_bottom,26,15,50]; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 26; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 27; @position = 18; @symbol_constdef = [exclude,27,18,25]; @symbol_type<0> = [Boolean,27,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 30; @symbol_moduledef = [prompt_font_enhanced_readability__body_no_title,30,15,62]; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 30; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 31; @position = 18; @symbol_constdef = [exclude,31,18,25]; @symbol_type<0> = [Boolean,31,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 34; @symbol_moduledef = [prompt_loc__body_no_title,34,15,40]; ]
+        module prompt_loc__body_no_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 34; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 35; @position = 18; @symbol_constdef = [x,35,18,19]; @symbol_type<0> = [Number,35,23,29]; ]
+            const x as Number = 45;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 36; @position = 18; @symbol_constdef = [y,36,18,19]; @symbol_type<0> = [Number,36,23,29]; ]
+            const y as Number = 68;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 39; @symbol_moduledef = [system_icon_dark__about,39,15,38]; ]
+        module system_icon_dark__about {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 39; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 40; @position = 18; @symbol_constdef = [filename,40,18,26]; @symbol_type<0> = [String,40,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__about.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 41; @position = 18; @symbol_constdef = [compress,41,18,26]; @symbol_type<0> = [String,41,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 42; @position = 18; @symbol_constdef = [dithering,42,18,27]; @symbol_type<0> = [String,42,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 43; @position = 18; @symbol_constdef = [automaticPalette,43,18,34]; @symbol_type<0> = [String,43,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 46; @symbol_moduledef = [system_icon_light__question,46,15,42]; ]
+        module system_icon_light__question {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 46; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 47; @position = 18; @symbol_constdef = [filename,47,18,26]; @symbol_type<0> = [String,47,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__question.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 48; @position = 18; @symbol_constdef = [compress,48,18,26]; @symbol_type<0> = [String,48,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 49; @position = 18; @symbol_constdef = [dithering,49,18,27]; @symbol_type<0> = [String,49,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 50; @position = 18; @symbol_constdef = [automaticPalette,50,18,34]; @symbol_type<0> = [String,50,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 53; @symbol_moduledef = [system_loc__hint_button_left_top,53,15,47]; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 53; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 54; @position = 18; @symbol_constdef = [exclude,54,18,25]; @symbol_type<0> = [Boolean,54,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 57; @symbol_moduledef = [prompt_font__title,57,15,33]; ]
+        module prompt_font__title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 57; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 58 18 ]
+                symbol [ Graphics %tmp.1 58 34 42 ];
+                %tmp.1 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.2 58 43 62 ];
+                %tmp.2 = getv %tmp.1 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.3 58 63 71 ];
+                %tmp.3 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.4 58 72 92 ];
+                %tmp.4 = getv %tmp.3 :TEXT_JUSTIFY_VCENTER;
+                %tmp.5 = bitor %tmp.2 %tmp.4;
+                putv self :justification %tmp.5;
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 59 18 ]
+                symbol [ Graphics %tmp.6 59 25 33 ];
+                %tmp.6 = getm $.Toybox.Graphics;
+                symbol [ FONT_XTINY %tmp.7 59 34 44 ];
+                %tmp.7 = getv %tmp.6 :FONT_XTINY;
+                putv self :font %tmp.7;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 58; @position = 18; @symbol_constdef = [justification,58,18,31]; ]
+            const justification;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 59; @position = 18; @symbol_constdef = [font,59,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 62; @symbol_moduledef = [system_icon_dark__discard,62,15,40]; ]
+        module system_icon_dark__discard {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 62; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 63; @position = 18; @symbol_constdef = [filename,63,18,26]; @symbol_type<0> = [String,63,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__discard.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 64; @position = 18; @symbol_constdef = [compress,64,18,26]; @symbol_type<0> = [String,64,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 65; @position = 18; @symbol_constdef = [dithering,65,18,27]; @symbol_type<0> = [String,65,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 66; @position = 18; @symbol_constdef = [automaticPalette,66,18,34]; @symbol_type<0> = [String,66,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 69; @symbol_moduledef = [system_size__menu_item,69,15,37]; ]
+        module system_size__menu_item {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 69; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 70; @position = 18; @symbol_constdef = [width,70,18,23]; @symbol_type<0> = [Number,70,27,33]; ]
+            const width as Number = 454;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 71; @position = 18; @symbol_constdef = [height,71,18,24]; @symbol_type<0> = [Number,71,28,34]; ]
+            const height as Number = 140;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 74; @symbol_moduledef = [system_color_dark__text,74,15,38]; ]
+        module system_color_dark__text {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 74; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 76 18 ]
+                symbol [ Graphics %tmp.8 76 31 39 ];
+                %tmp.8 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.9 76 40 57 ];
+                %tmp.9 = getv %tmp.8 :COLOR_TRANSPARENT;
+                putv self :background %tmp.9;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 75; @position = 18; @symbol_constdef = [color,75,18,23]; @symbol_type<0> = [Number,75,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 76; @position = 18; @symbol_constdef = [background,76,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 79; @symbol_moduledef = [system_icon_destructive__discard,79,15,47]; ]
+        module system_icon_destructive__discard {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 79; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 80; @position = 18; @symbol_constdef = [filename,80,18,26]; @symbol_type<0> = [String,80,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_destructive__discard.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 81; @position = 18; @symbol_constdef = [dithering,81,18,27]; @symbol_type<0> = [String,81,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 82; @position = 18; @symbol_constdef = [packingFormat,82,18,31]; @symbol_type<0> = [String,82,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 85; @symbol_moduledef = [system_icon_dark__hint_action_menu,85,15,49]; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 85; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 86; @position = 18; @symbol_constdef = [exclude,86,18,25]; @symbol_type<0> = [Boolean,86,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 89; @symbol_moduledef = [prompt_size__title,89,15,33]; ]
+        module prompt_size__title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 89; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 90; @position = 18; @symbol_constdef = [width,90,18,23]; @symbol_type<0> = [Number,90,27,33]; ]
+            const width as Number = 192;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 91; @position = 18; @symbol_constdef = [height,91,18,24]; @symbol_type<0> = [Number,91,28,34]; ]
+            const height as Number = 81;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 94; @symbol_moduledef = [confirmation_font__body,94,15,38]; ]
+        module confirmation_font__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 94; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 95 18 ]
+                symbol [ Graphics %tmp.10 95 34 42 ];
+                %tmp.10 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.11 95 43 62 ];
+                %tmp.11 = getv %tmp.10 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.12 95 63 71 ];
+                %tmp.12 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.13 95 72 92 ];
+                %tmp.13 = getv %tmp.12 :TEXT_JUSTIFY_VCENTER;
+                %tmp.14 = bitor %tmp.11 %tmp.13;
+                putv self :justification %tmp.14;
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 96 18 ]
+                symbol [ Graphics %tmp.15 96 25 33 ];
+                %tmp.15 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.16 96 34 43 ];
+                %tmp.16 = getv %tmp.15 :FONT_TINY;
+                putv self :font %tmp.16;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 95; @position = 18; @symbol_constdef = [justification,95,18,31]; ]
+            const justification;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 96; @position = 18; @symbol_constdef = [font,96,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 99; @symbol_moduledef = [system_color_dark__background,99,15,44]; ]
+        module system_color_dark__background {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 99; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 100; @position = 18; @symbol_constdef = [color,100,18,23]; @symbol_type<0> = [Number,100,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 101; @position = 18; @symbol_constdef = [background,101,18,28]; @symbol_type<0> = [Number,101,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 104; @symbol_moduledef = [system_icon_destructive__hint_button_left_top,104,15,60]; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 104; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 105; @position = 18; @symbol_constdef = [exclude,105,18,25]; @symbol_type<0> = [Boolean,105,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 108; @symbol_moduledef = [system_size__launch_icon,108,15,39]; ]
+        module system_size__launch_icon {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 108; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 109; @position = 18; @symbol_constdef = [scaleX,109,18,24]; @symbol_type<0> = [Number,109,28,34]; ]
+            const scaleX as Number = 65;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 110; @position = 18; @symbol_constdef = [scaleY,110,18,24]; @symbol_type<0> = [Number,110,28,34]; ]
+            const scaleY as Number = 65;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 111; @position = 18; @symbol_constdef = [scaleRelativeTo,111,18,33]; @symbol_type<0> = [String,111,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 114; @symbol_moduledef = [confirmation_input__confirm,114,15,42]; ]
+        module confirmation_input__confirm {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 114; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 115; @position = 18; @symbol_constdef = [y1,115,18,20]; @symbol_type<0> = [Number,115,24,30]; ]
+            const y1 as Number = 318;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 116; @position = 18; @symbol_constdef = [x1,116,18,20]; @symbol_type<0> = [Number,116,24,30]; ]
+            const x1 as Number = 240;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 117; @position = 18; @symbol_constdef = [y2,117,18,20]; @symbol_type<0> = [Number,117,24,30]; ]
+            const y2 as Number = 404;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 118; @position = 18; @symbol_constdef = [x2,118,18,20]; @symbol_type<0> = [Number,118,24,30]; ]
+            const x2 as Number = 384;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 121; @symbol_moduledef = [prompt_font__body_with_title,121,15,43]; ]
+        module prompt_font__body_with_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 121; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 122 18 ]
+                symbol [ Graphics %tmp.17 122 34 42 ];
+                %tmp.17 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.18 122 43 62 ];
+                %tmp.18 = getv %tmp.17 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.18;
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 123 18 ]
+                symbol [ Graphics %tmp.19 123 25 33 ];
+                %tmp.19 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.20 123 34 43 ];
+                %tmp.20 = getv %tmp.19 :FONT_TINY;
+                putv self :font %tmp.20;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 122; @position = 18; @symbol_constdef = [justification,122,18,31]; ]
+            const justification;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 123; @position = 18; @symbol_constdef = [font,123,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 126; @symbol_moduledef = [confirmation_loc__body,126,15,37]; ]
+        module confirmation_loc__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 126; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 127; @position = 18; @symbol_constdef = [x,127,18,19]; @symbol_type<0> = [Number,127,23,29]; ]
+            const x as Number = 93;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 128; @position = 18; @symbol_constdef = [y,128,18,19]; @symbol_type<0> = [Number,128,23,29]; ]
+            const y as Number = 91;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 131; @symbol_moduledef = [system_icon_destructive__hint_button_left_bottom,131,15,63]; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 131; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 132; @position = 18; @symbol_constdef = [exclude,132,18,25]; @symbol_type<0> = [Boolean,132,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 135; @symbol_moduledef = [prompt_color_dark__background,135,15,44]; ]
+        module prompt_color_dark__background {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 135; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 136; @position = 18; @symbol_constdef = [color,136,18,23]; @symbol_type<0> = [Number,136,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 137; @position = 18; @symbol_constdef = [background,137,18,28]; @symbol_type<0> = [Number,137,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 140; @symbol_moduledef = [system_icon_destructive__hint_action_menu,140,15,56]; ]
+        module system_icon_destructive__hint_action_menu {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 140; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 141; @position = 18; @symbol_constdef = [exclude,141,18,25]; @symbol_type<0> = [Boolean,141,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 144; @symbol_moduledef = [system_loc__hint_action_menu,144,15,43]; ]
+        module system_loc__hint_action_menu {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 144; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 145; @position = 18; @symbol_constdef = [x,145,18,19]; @symbol_type<0> = [Number,145,23,29]; ]
+            const x as Number = 420;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 146; @position = 18; @symbol_constdef = [y,146,18,19]; @symbol_type<0> = [Number,146,23,29]; ]
+            const y as Number = 174;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 149; @symbol_moduledef = [confirmation_icon__hint_confirm,149,15,46]; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 149; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 150; @position = 18; @symbol_constdef = [filename,150,18,26]; @symbol_type<0> = [String,150,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 151; @position = 18; @symbol_constdef = [dithering,151,18,27]; @symbol_type<0> = [String,151,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 152; @position = 18; @symbol_constdef = [packingFormat,152,18,31]; @symbol_type<0> = [String,152,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 155; @symbol_moduledef = [system_loc__hint_button_left_middle,155,15,50]; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 155; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 156; @position = 18; @symbol_constdef = [exclude,156,18,25]; @symbol_type<0> = [Boolean,156,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 159; @symbol_moduledef = [prompt_size__body_no_title,159,15,41]; ]
+        module prompt_size__body_no_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 159; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 160; @position = 18; @symbol_constdef = [width,160,18,23]; @symbol_type<0> = [Number,160,27,33]; ]
+            const width as Number = 363;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 161; @position = 18; @symbol_constdef = [height,161,18,24]; @symbol_type<0> = [Number,161,28,34]; ]
+            const height as Number = 295;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 164; @symbol_moduledef = [system_icon_light__hint_button_left_top,164,15,54]; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 164; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 165; @position = 18; @symbol_constdef = [exclude,165,18,25]; @symbol_type<0> = [Boolean,165,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 168; @symbol_moduledef = [prompt_color_light__background,168,15,45]; ]
+        module prompt_color_light__background {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 168; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 169; @position = 18; @symbol_constdef = [color,169,18,23]; @symbol_type<0> = [Number,169,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 170; @position = 18; @symbol_constdef = [background,170,18,28]; @symbol_type<0> = [Number,170,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 173; @symbol_moduledef = [confirmation_input__delete,173,15,41]; ]
+        module confirmation_input__delete {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 173; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 174 18 ]
+                symbol [ WatchUi %tmp.21 174 27 34 ];
+                %tmp.21 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.22 174 35 44 ];
+                %tmp.22 = getv %tmp.21 :KEY_ENTER;
+                putv self :button %tmp.22;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 174; @position = 18; @symbol_constdef = [button,174,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 177; @symbol_moduledef = [system_icon_dark__hint_button_left_top,177,15,53]; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 177; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 178; @position = 18; @symbol_constdef = [exclude,178,18,25]; @symbol_type<0> = [Boolean,178,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 181; @symbol_moduledef = [system_input__action_menu,181,15,40]; ]
+        module system_input__action_menu {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 181; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 182 18 ]
+                symbol [ WatchUi %tmp.23 182 27 34 ];
+                %tmp.23 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ACTION_MENU %tmp.24 182 35 50 ];
+                %tmp.24 = getv %tmp.23 :KEY_ACTION_MENU;
+                putv self :button %tmp.24;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 182; @position = 18; @symbol_constdef = [button,182,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 185; @symbol_moduledef = [system_icon_light__save,185,15,38]; ]
+        module system_icon_light__save {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 185; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 186; @position = 18; @symbol_constdef = [filename,186,18,26]; @symbol_type<0> = [String,186,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__save.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 187; @position = 18; @symbol_constdef = [compress,187,18,26]; @symbol_type<0> = [String,187,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 188; @position = 18; @symbol_constdef = [dithering,188,18,27]; @symbol_type<0> = [String,188,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 189; @position = 18; @symbol_constdef = [automaticPalette,189,18,34]; @symbol_type<0> = [String,189,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 192; @symbol_moduledef = [prompt_color_light__body,192,15,39]; ]
+        module prompt_color_light__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 192; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 194 18 ]
+                symbol [ Graphics %tmp.25 194 31 39 ];
+                %tmp.25 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.26 194 40 57 ];
+                %tmp.26 = getv %tmp.25 :COLOR_TRANSPARENT;
+                putv self :background %tmp.26;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 193; @position = 18; @symbol_constdef = [color,193,18,23]; @symbol_type<0> = [Number,193,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 194; @position = 18; @symbol_constdef = [background,194,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 197; @symbol_moduledef = [system_loc__subwindow,197,15,36]; ]
+        module system_loc__subwindow {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 197; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 198; @position = 18; @symbol_constdef = [exclude,198,18,25]; @symbol_type<0> = [Boolean,198,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 201; @symbol_moduledef = [system_icon_light__warning,201,15,41]; ]
+        module system_icon_light__warning {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 201; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 202; @position = 18; @symbol_constdef = [filename,202,18,26]; @symbol_type<0> = [String,202,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__warning.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 203; @position = 18; @symbol_constdef = [compress,203,18,26]; @symbol_type<0> = [String,203,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 204; @position = 18; @symbol_constdef = [dithering,204,18,27]; @symbol_type<0> = [String,204,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 205; @position = 18; @symbol_constdef = [automaticPalette,205,18,34]; @symbol_type<0> = [String,205,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 208; @symbol_moduledef = [confirmation_color_light__body,208,15,45]; ]
+        module confirmation_color_light__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 208; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 210 18 ]
+                symbol [ Graphics %tmp.27 210 31 39 ];
+                %tmp.27 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.28 210 40 57 ];
+                %tmp.28 = getv %tmp.27 :COLOR_TRANSPARENT;
+                putv self :background %tmp.28;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 209; @position = 18; @symbol_constdef = [color,209,18,23]; @symbol_type<0> = [Number,209,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 210; @position = 18; @symbol_constdef = [background,210,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 213; @symbol_moduledef = [confirmation_icon_light__hint_keep,213,15,49]; ]
+        module confirmation_icon_light__hint_keep {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 213; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 214; @position = 18; @symbol_constdef = [filename,214,18,26]; @symbol_type<0> = [String,214,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 215; @position = 18; @symbol_constdef = [dithering,215,18,27]; @symbol_type<0> = [String,215,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 216; @position = 18; @symbol_constdef = [packingFormat,216,18,31]; @symbol_type<0> = [String,216,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 219; @symbol_moduledef = [activity_color_light__background,219,15,47]; ]
+        module activity_color_light__background {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 219; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 220; @position = 18; @symbol_constdef = [color,220,18,23]; @symbol_type<0> = [Number,220,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 221; @position = 18; @symbol_constdef = [background,221,18,28]; @symbol_type<0> = [Number,221,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 224; @symbol_moduledef = [system_icon_positive__hint_button_right_top,224,15,58]; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 224; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 225; @position = 18; @symbol_constdef = [filename,225,18,26]; @symbol_type<0> = [String,225,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 226; @position = 18; @symbol_constdef = [dithering,226,18,27]; @symbol_type<0> = [String,226,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 227; @position = 18; @symbol_constdef = [packingFormat,227,18,31]; @symbol_type<0> = [String,227,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 230; @symbol_moduledef = [system_size__screen,230,15,34]; ]
+        module system_size__screen {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 230; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 231; @position = 18; @symbol_constdef = [width,231,18,23]; @symbol_type<0> = [Number,231,27,33]; ]
+            const width as Number = 454;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 232; @position = 18; @symbol_constdef = [height,232,18,24]; @symbol_type<0> = [Number,232,28,34]; ]
+            const height as Number = 454;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 235; @symbol_moduledef = [system_icon_destructive__hint_button_right_bottom,235,15,64]; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 235; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 236; @position = 18; @symbol_constdef = [filename,236,18,26]; @symbol_type<0> = [String,236,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 237; @position = 18; @symbol_constdef = [dithering,237,18,27]; @symbol_type<0> = [String,237,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 238; @position = 18; @symbol_constdef = [packingFormat,238,18,31]; @symbol_type<0> = [String,238,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 241; @symbol_moduledef = [system_color_light__background,241,15,45]; ]
+        module system_color_light__background {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 241; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 242; @position = 18; @symbol_constdef = [color,242,18,23]; @symbol_type<0> = [Number,242,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 243; @position = 18; @symbol_constdef = [background,243,18,28]; @symbol_type<0> = [Number,243,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 246; @symbol_moduledef = [system_icon_destructive__hint_button_right_top,246,15,61]; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 246; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 247; @position = 18; @symbol_constdef = [filename,247,18,26]; @symbol_type<0> = [String,247,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 248; @position = 18; @symbol_constdef = [dithering,248,18,27]; @symbol_type<0> = [String,248,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 249; @position = 18; @symbol_constdef = [packingFormat,249,18,31]; @symbol_type<0> = [String,249,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 252; @symbol_moduledef = [confirmation_loc__hint_confirm,252,15,45]; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 252; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 253; @position = 18; @symbol_constdef = [x,253,18,19]; @symbol_type<0> = [Number,253,23,29]; ]
+            const x as Number = 312;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 254; @position = 18; @symbol_constdef = [horizontalJustification,254,18,41]; @symbol_type<0> = [String,254,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 255; @position = 18; @symbol_constdef = [y,255,18,19]; @symbol_type<0> = [Number,255,23,29]; ]
+            const y as Number = 310;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 258; @symbol_moduledef = [activity_color_dark__text,258,15,40]; ]
+        module activity_color_dark__text {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 258; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 260 18 ]
+                symbol [ Graphics %tmp.29 260 31 39 ];
+                %tmp.29 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.30 260 40 57 ];
+                %tmp.30 = getv %tmp.29 :COLOR_TRANSPARENT;
+                putv self :background %tmp.30;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 259; @position = 18; @symbol_constdef = [color,259,18,23]; @symbol_type<0> = [Number,259,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 260; @position = 18; @symbol_constdef = [background,260,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 263; @symbol_moduledef = [confirmation_input__keep,263,15,39]; ]
+        module confirmation_input__keep {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 263; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 264 18 ]
+                symbol [ WatchUi %tmp.31 264 27 34 ];
+                %tmp.31 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ESC %tmp.32 264 35 42 ];
+                %tmp.32 = getv %tmp.31 :KEY_ESC;
+                putv self :button %tmp.32;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 264; @position = 18; @symbol_constdef = [button,264,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 267; @symbol_moduledef = [prompt_loc__body_with_title,267,15,42]; ]
+        module prompt_loc__body_with_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 267; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 268; @position = 18; @symbol_constdef = [x,268,18,19]; @symbol_type<0> = [Number,268,23,29]; ]
+            const x as Number = 45;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 269; @position = 18; @symbol_constdef = [y,269,18,19]; @symbol_type<0> = [Number,269,23,29]; ]
+            const y as Number = 114;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 272; @symbol_moduledef = [system_icon_dark__search,272,15,39]; ]
+        module system_icon_dark__search {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 272; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 273; @position = 18; @symbol_constdef = [filename,273,18,26]; @symbol_type<0> = [String,273,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__search.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 274; @position = 18; @symbol_constdef = [compress,274,18,26]; @symbol_type<0> = [String,274,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 275; @position = 18; @symbol_constdef = [dithering,275,18,27]; @symbol_type<0> = [String,275,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 276; @position = 18; @symbol_constdef = [automaticPalette,276,18,34]; @symbol_type<0> = [String,276,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 279; @symbol_moduledef = [activity_color_light__text,279,15,41]; ]
+        module activity_color_light__text {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 279; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 281 18 ]
+                symbol [ Graphics %tmp.33 281 31 39 ];
+                %tmp.33 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.34 281 40 57 ];
+                %tmp.34 = getv %tmp.33 :COLOR_TRANSPARENT;
+                putv self :background %tmp.34;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 280; @position = 18; @symbol_constdef = [color,280,18,23]; @symbol_type<0> = [Number,280,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 281; @position = 18; @symbol_constdef = [background,281,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 284; @symbol_moduledef = [confirmation_icon__hint_keep,284,15,43]; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 284; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 285; @position = 18; @symbol_constdef = [filename,285,18,26]; @symbol_type<0> = [String,285,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 286; @position = 18; @symbol_constdef = [dithering,286,18,27]; @symbol_type<0> = [String,286,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 287; @position = 18; @symbol_constdef = [packingFormat,287,18,31]; @symbol_type<0> = [String,287,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 290; @symbol_moduledef = [system_icon_dark__save,290,15,37]; ]
+        module system_icon_dark__save {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 290; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 291; @position = 18; @symbol_constdef = [filename,291,18,26]; @symbol_type<0> = [String,291,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__save.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 292; @position = 18; @symbol_constdef = [compress,292,18,26]; @symbol_type<0> = [String,292,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 293; @position = 18; @symbol_constdef = [dithering,293,18,27]; @symbol_type<0> = [String,293,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 294; @position = 18; @symbol_constdef = [automaticPalette,294,18,34]; @symbol_type<0> = [String,294,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 297; @symbol_moduledef = [system_icon_destructive__hint_button_left_middle,297,15,63]; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 297; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 298; @position = 18; @symbol_constdef = [exclude,298,18,25]; @symbol_type<0> = [Boolean,298,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 301; @symbol_moduledef = [system_icon_light__search,301,15,40]; ]
+        module system_icon_light__search {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 301; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 302; @position = 18; @symbol_constdef = [filename,302,18,26]; @symbol_type<0> = [String,302,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__search.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 303; @position = 18; @symbol_constdef = [compress,303,18,26]; @symbol_type<0> = [String,303,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 304; @position = 18; @symbol_constdef = [dithering,304,18,27]; @symbol_type<0> = [String,304,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 305; @position = 18; @symbol_constdef = [automaticPalette,305,18,34]; @symbol_type<0> = [String,305,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 308; @symbol_moduledef = [system_icon_dark__hint_button_left_bottom,308,15,56]; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 308; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 309; @position = 18; @symbol_constdef = [exclude,309,18,25]; @symbol_type<0> = [Boolean,309,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 312; @symbol_moduledef = [system_icon_positive__hint_button_left_top,312,15,57]; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 312; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 313; @position = 18; @symbol_constdef = [exclude,313,18,25]; @symbol_type<0> = [Boolean,313,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 316; @symbol_moduledef = [system_loc__hint_button_right_bottom,316,15,51]; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 316; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 317; @position = 18; @symbol_constdef = [x,317,18,19]; @symbol_type<0> = [Number,317,23,29]; ]
+            const x as Number = 342;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 318; @position = 18; @symbol_constdef = [y,318,18,19]; @symbol_type<0> = [Number,318,23,29]; ]
+            const y as Number = 256;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 321; @symbol_moduledef = [confirmation_icon_dark__hint_reject,321,15,50]; ]
+        module confirmation_icon_dark__hint_reject {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 321; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 322; @position = 18; @symbol_constdef = [filename,322,18,26]; @symbol_type<0> = [String,322,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 323; @position = 18; @symbol_constdef = [dithering,323,18,27]; @symbol_type<0> = [String,323,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 324; @position = 18; @symbol_constdef = [packingFormat,324,18,31]; @symbol_type<0> = [String,324,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 327; @symbol_moduledef = [confirmation_color_dark__body,327,15,44]; ]
+        module confirmation_color_dark__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 327; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 329 18 ]
+                symbol [ Graphics %tmp.35 329 31 39 ];
+                %tmp.35 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.36 329 40 57 ];
+                %tmp.36 = getv %tmp.35 :COLOR_TRANSPARENT;
+                putv self :background %tmp.36;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 328; @position = 18; @symbol_constdef = [color,328,18,23]; @symbol_type<0> = [Number,328,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 329; @position = 18; @symbol_constdef = [background,329,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 332; @symbol_moduledef = [confirmation_icon_light__hint_confirm,332,15,52]; ]
+        module confirmation_icon_light__hint_confirm {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 332; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 333; @position = 18; @symbol_constdef = [filename,333,18,26]; @symbol_type<0> = [String,333,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 334; @position = 18; @symbol_constdef = [dithering,334,18,27]; @symbol_type<0> = [String,334,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 335; @position = 18; @symbol_constdef = [packingFormat,335,18,31]; @symbol_type<0> = [String,335,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 338; @symbol_moduledef = [prompt_color_dark__title,338,15,39]; ]
+        module prompt_color_dark__title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 338; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 340 18 ]
+                symbol [ Graphics %tmp.37 340 31 39 ];
+                %tmp.37 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.38 340 40 57 ];
+                %tmp.38 = getv %tmp.37 :COLOR_TRANSPARENT;
+                putv self :background %tmp.38;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 339; @position = 18; @symbol_constdef = [color,339,18,23]; @symbol_type<0> = [Number,339,27,33]; ]
+            const color as Number = 0xB3B3B3;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 340; @position = 18; @symbol_constdef = [background,340,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 343; @symbol_moduledef = [system_icon_destructive__cancel,343,15,46]; ]
+        module system_icon_destructive__cancel {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 343; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 344; @position = 18; @symbol_constdef = [filename,344,18,26]; @symbol_type<0> = [String,344,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_destructive__cancel.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 345; @position = 18; @symbol_constdef = [dithering,345,18,27]; @symbol_type<0> = [String,345,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 346; @position = 18; @symbol_constdef = [packingFormat,346,18,31]; @symbol_type<0> = [String,346,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 349; @symbol_moduledef = [system_icon_light__hint_button_right_bottom,349,15,58]; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 349; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 350; @position = 18; @symbol_constdef = [filename,350,18,26]; @symbol_type<0> = [String,350,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 351; @position = 18; @symbol_constdef = [dithering,351,18,27]; @symbol_type<0> = [String,351,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 352; @position = 18; @symbol_constdef = [packingFormat,352,18,31]; @symbol_type<0> = [String,352,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 355; @symbol_moduledef = [prompt_loc__title,355,15,32]; ]
+        module prompt_loc__title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 355; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 356; @position = 18; @symbol_constdef = [x,356,18,19]; @symbol_type<0> = [Number,356,23,29]; ]
+            const x as Number = 138;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 357; @position = 18; @symbol_constdef = [y,357,18,19]; @symbol_type<0> = [Number,357,23,29]; ]
+            const y as Number = 20;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 360; @symbol_moduledef = [confirmation_font_enhanced_readability__body,360,15,59]; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 360; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 361 18 ]
+                symbol [ Graphics %tmp.39 361 34 42 ];
+                %tmp.39 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.40 361 43 62 ];
+                %tmp.40 = getv %tmp.39 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.41 361 63 71 ];
+                %tmp.41 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.42 361 72 92 ];
+                %tmp.42 = getv %tmp.41 :TEXT_JUSTIFY_VCENTER;
+                %tmp.43 = bitor %tmp.40 %tmp.42;
+                putv self :justification %tmp.43;
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 362 18 ]
+                symbol [ Graphics %tmp.44 362 25 33 ];
+                %tmp.44 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.45 362 34 44 ];
+                %tmp.45 = getv %tmp.44 :FONT_SMALL;
+                putv self :font %tmp.45;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 361; @position = 18; @symbol_constdef = [justification,361,18,31]; ]
+            const justification;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 362; @position = 18; @symbol_constdef = [font,362,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 365; @symbol_moduledef = [prompt_color_light__title,365,15,40]; ]
+        module prompt_color_light__title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 365; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 367 18 ]
+                symbol [ Graphics %tmp.46 367 31 39 ];
+                %tmp.46 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.47 367 40 57 ];
+                %tmp.47 = getv %tmp.46 :COLOR_TRANSPARENT;
+                putv self :background %tmp.47;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 366; @position = 18; @symbol_constdef = [color,366,18,23]; @symbol_type<0> = [Number,366,27,33]; ]
+            const color as Number = 0xB3B3B3;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 367; @position = 18; @symbol_constdef = [background,367,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 370; @symbol_moduledef = [system_icon_dark__hint_button_right_top,370,15,54]; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 370; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 371; @position = 18; @symbol_constdef = [filename,371,18,26]; @symbol_type<0> = [String,371,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 372; @position = 18; @symbol_constdef = [dithering,372,18,27]; @symbol_type<0> = [String,372,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 373; @position = 18; @symbol_constdef = [packingFormat,373,18,31]; @symbol_type<0> = [String,373,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 376; @symbol_moduledef = [system_icon_dark__hint_button_left_middle,376,15,56]; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 376; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 377; @position = 18; @symbol_constdef = [exclude,377,18,25]; @symbol_type<0> = [Boolean,377,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 380; @symbol_moduledef = [confirmation_icon_dark__hint_keep,380,15,48]; ]
+        module confirmation_icon_dark__hint_keep {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 380; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 381; @position = 18; @symbol_constdef = [filename,381,18,26]; @symbol_type<0> = [String,381,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 382; @position = 18; @symbol_constdef = [dithering,382,18,27]; @symbol_type<0> = [String,382,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 383; @position = 18; @symbol_constdef = [packingFormat,383,18,31]; @symbol_type<0> = [String,383,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 386; @symbol_moduledef = [system_icon_light__cancel,386,15,40]; ]
+        module system_icon_light__cancel {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 386; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 387; @position = 18; @symbol_constdef = [filename,387,18,26]; @symbol_type<0> = [String,387,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__cancel.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 388; @position = 18; @symbol_constdef = [compress,388,18,26]; @symbol_type<0> = [String,388,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 389; @position = 18; @symbol_constdef = [dithering,389,18,27]; @symbol_type<0> = [String,389,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 390; @position = 18; @symbol_constdef = [automaticPalette,390,18,34]; @symbol_type<0> = [String,390,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 393; @symbol_moduledef = [confirmation_icon_light__hint_reject,393,15,51]; ]
+        module confirmation_icon_light__hint_reject {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 393; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 394; @position = 18; @symbol_constdef = [filename,394,18,26]; @symbol_type<0> = [String,394,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 395; @position = 18; @symbol_constdef = [dithering,395,18,27]; @symbol_type<0> = [String,395,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 396; @position = 18; @symbol_constdef = [packingFormat,396,18,31]; @symbol_type<0> = [String,396,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 399; @symbol_moduledef = [system_icon_light__about,399,15,39]; ]
+        module system_icon_light__about {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 399; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 400; @position = 18; @symbol_constdef = [filename,400,18,26]; @symbol_type<0> = [String,400,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__about.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 401; @position = 18; @symbol_constdef = [compress,401,18,26]; @symbol_type<0> = [String,401,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 402; @position = 18; @symbol_constdef = [dithering,402,18,27]; @symbol_type<0> = [String,402,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 403; @position = 18; @symbol_constdef = [automaticPalette,403,18,34]; @symbol_type<0> = [String,403,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 406; @symbol_moduledef = [system_size__toast_icon,406,15,38]; ]
+        module system_size__toast_icon {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 406; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 407; @position = 18; @symbol_constdef = [scaleX,407,18,24]; @symbol_type<0> = [Number,407,28,34]; ]
+            const scaleX as Number = 46;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 408; @position = 18; @symbol_constdef = [scaleY,408,18,24]; @symbol_type<0> = [Number,408,28,34]; ]
+            const scaleY as Number = 46;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 409; @position = 18; @symbol_constdef = [scaleRelativeTo,409,18,33]; @symbol_type<0> = [String,409,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 412; @symbol_moduledef = [system_icon_dark__hint_button_right_middle,412,15,57]; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 412; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 413; @position = 18; @symbol_constdef = [exclude,413,18,25]; @symbol_type<0> = [Boolean,413,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 416; @symbol_moduledef = [confirmation_icon__hint_reject,416,15,45]; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 416; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 417; @position = 18; @symbol_constdef = [filename,417,18,26]; @symbol_type<0> = [String,417,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 418; @position = 18; @symbol_constdef = [dithering,418,18,27]; @symbol_type<0> = [String,418,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 419; @position = 18; @symbol_constdef = [packingFormat,419,18,31]; @symbol_type<0> = [String,419,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 422; @symbol_moduledef = [system_icon_light__hint_action_menu,422,15,50]; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 422; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 423; @position = 18; @symbol_constdef = [exclude,423,18,25]; @symbol_type<0> = [Boolean,423,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 426; @symbol_moduledef = [system_icon_light__hint_button_right_middle,426,15,58]; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 426; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 427; @position = 18; @symbol_constdef = [exclude,427,18,25]; @symbol_type<0> = [Boolean,427,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 430; @symbol_moduledef = [system_icon_destructive__hint_button_right_middle,430,15,64]; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 430; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 431; @position = 18; @symbol_constdef = [exclude,431,18,25]; @symbol_type<0> = [Boolean,431,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 434; @symbol_moduledef = [confirmation_loc__hint_reject,434,15,44]; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 434; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 435; @position = 18; @symbol_constdef = [x,435,18,19]; @symbol_type<0> = [Number,435,23,29]; ]
+            const x as Number = 145;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 436; @position = 18; @symbol_constdef = [horizontalJustification,436,18,41]; @symbol_type<0> = [String,436,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 437; @position = 18; @symbol_constdef = [y,437,18,19]; @symbol_type<0> = [Number,437,23,29]; ]
+            const y as Number = 310;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 440; @symbol_moduledef = [confirmation_icon_dark__hint_delete,440,15,50]; ]
+        module confirmation_icon_dark__hint_delete {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 440; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 441; @position = 18; @symbol_constdef = [filename,441,18,26]; @symbol_type<0> = [String,441,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 442; @position = 18; @symbol_constdef = [dithering,442,18,27]; @symbol_type<0> = [String,442,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 443; @position = 18; @symbol_constdef = [packingFormat,443,18,31]; @symbol_type<0> = [String,443,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 446; @symbol_moduledef = [activity_color_dark__background,446,15,46]; ]
+        module activity_color_dark__background {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 446; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 447; @position = 18; @symbol_constdef = [color,447,18,23]; @symbol_type<0> = [Number,447,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 448; @position = 18; @symbol_constdef = [background,448,18,28]; @symbol_type<0> = [Number,448,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 451; @symbol_moduledef = [system_icon_light__hint_button_left_bottom,451,15,57]; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 451; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 452; @position = 18; @symbol_constdef = [exclude,452,18,25]; @symbol_type<0> = [Boolean,452,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 455; @symbol_moduledef = [system_icon_positive__hint_button_left_middle,455,15,60]; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 455; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 456; @position = 18; @symbol_constdef = [exclude,456,18,25]; @symbol_type<0> = [Boolean,456,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 459; @symbol_moduledef = [system_size__menu_icon,459,15,37]; ]
+        module system_size__menu_icon {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 459; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 460; @position = 18; @symbol_constdef = [scaleX,460,18,24]; @symbol_type<0> = [Number,460,28,34]; ]
+            const scaleX as Number = 76;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 461; @position = 18; @symbol_constdef = [scaleY,461,18,24]; @symbol_type<0> = [Number,461,28,34]; ]
+            const scaleY as Number = 138;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 462; @position = 18; @symbol_constdef = [scaleRelativeTo,462,18,33]; @symbol_type<0> = [String,462,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 465; @symbol_moduledef = [system_icon_destructive__warning,465,15,47]; ]
+        module system_icon_destructive__warning {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 465; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 466; @position = 18; @symbol_constdef = [filename,466,18,26]; @symbol_type<0> = [String,466,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_destructive__warning.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 467; @position = 18; @symbol_constdef = [dithering,467,18,27]; @symbol_type<0> = [String,467,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 468; @position = 18; @symbol_constdef = [packingFormat,468,18,31]; @symbol_type<0> = [String,468,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 471; @symbol_moduledef = [system_loc__hint_button_right_middle,471,15,51]; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 471; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 472; @position = 18; @symbol_constdef = [exclude,472,18,25]; @symbol_type<0> = [Boolean,472,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 475; @symbol_moduledef = [system_icon_dark__cancel,475,15,39]; ]
+        module system_icon_dark__cancel {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 475; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 476; @position = 18; @symbol_constdef = [filename,476,18,26]; @symbol_type<0> = [String,476,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__cancel.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 477; @position = 18; @symbol_constdef = [compress,477,18,26]; @symbol_type<0> = [String,477,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 478; @position = 18; @symbol_constdef = [dithering,478,18,27]; @symbol_type<0> = [String,478,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 479; @position = 18; @symbol_constdef = [automaticPalette,479,18,34]; @symbol_type<0> = [String,479,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 482; @symbol_moduledef = [prompt_size__body_with_title,482,15,43]; ]
+        module prompt_size__body_with_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 482; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 483; @position = 18; @symbol_constdef = [width,483,18,23]; @symbol_type<0> = [Number,483,27,33]; ]
+            const width as Number = 363;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 484; @position = 18; @symbol_constdef = [height,484,18,24]; @symbol_type<0> = [Number,484,28,34]; ]
+            const height as Number = 250;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 487; @symbol_moduledef = [system_loc__hint_button_right_top,487,15,48]; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 487; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 488; @position = 18; @symbol_constdef = [x,488,18,19]; @symbol_type<0> = [Number,488,23,29]; ]
+            const x as Number = 360;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 489; @position = 18; @symbol_constdef = [y,489,18,19]; @symbol_type<0> = [Number,489,23,29]; ]
+            const y as Number = 54;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 492; @symbol_moduledef = [system_color_light__text,492,15,39]; ]
+        module system_color_light__text {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 492; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 494 18 ]
+                symbol [ Graphics %tmp.48 494 31 39 ];
+                %tmp.48 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.49 494 40 57 ];
+                %tmp.49 = getv %tmp.48 :COLOR_TRANSPARENT;
+                putv self :background %tmp.49;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 493; @position = 18; @symbol_constdef = [color,493,18,23]; @symbol_type<0> = [Number,493,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 494; @position = 18; @symbol_constdef = [background,494,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 497; @symbol_moduledef = [system_icon_light__check,497,15,39]; ]
+        module system_icon_light__check {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 497; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 498; @position = 18; @symbol_constdef = [filename,498,18,26]; @symbol_type<0> = [String,498,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__check.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 499; @position = 18; @symbol_constdef = [compress,499,18,26]; @symbol_type<0> = [String,499,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 500; @position = 18; @symbol_constdef = [dithering,500,18,27]; @symbol_type<0> = [String,500,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 501; @position = 18; @symbol_constdef = [automaticPalette,501,18,34]; @symbol_type<0> = [String,501,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 504; @symbol_moduledef = [confirmation_input__reject,504,15,41]; ]
+        module confirmation_input__reject {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 504; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 505; @position = 18; @symbol_constdef = [y1,505,18,20]; @symbol_type<0> = [Number,505,24,30]; ]
+            const y1 as Number = 318;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 506; @position = 18; @symbol_constdef = [x1,506,18,20]; @symbol_type<0> = [Number,506,24,30]; ]
+            const x1 as Number = 72;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 507; @position = 18; @symbol_constdef = [y2,507,18,20]; @symbol_type<0> = [Number,507,24,30]; ]
+            const y2 as Number = 404;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 508; @position = 18; @symbol_constdef = [x2,508,18,20]; @symbol_type<0> = [Number,508,24,30]; ]
+            const x2 as Number = 216;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 511; @symbol_moduledef = [system_icon_light__revert,511,15,40]; ]
+        module system_icon_light__revert {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 511; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 512; @position = 18; @symbol_constdef = [filename,512,18,26]; @symbol_type<0> = [String,512,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__revert.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 513; @position = 18; @symbol_constdef = [compress,513,18,26]; @symbol_type<0> = [String,513,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 514; @position = 18; @symbol_constdef = [dithering,514,18,27]; @symbol_type<0> = [String,514,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 515; @position = 18; @symbol_constdef = [automaticPalette,515,18,34]; @symbol_type<0> = [String,515,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 518; @symbol_moduledef = [system_size__subwindow,518,15,37]; ]
+        module system_size__subwindow {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 518; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 519; @position = 18; @symbol_constdef = [exclude,519,18,25]; @symbol_type<0> = [Boolean,519,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 522; @symbol_moduledef = [system_icon_positive__hint_button_left_bottom,522,15,60]; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 522; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 523; @position = 18; @symbol_constdef = [exclude,523,18,25]; @symbol_type<0> = [Boolean,523,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 526; @symbol_moduledef = [system_icon_dark__check,526,15,38]; ]
+        module system_icon_dark__check {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 526; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 527; @position = 18; @symbol_constdef = [filename,527,18,26]; @symbol_type<0> = [String,527,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__check.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 528; @position = 18; @symbol_constdef = [compress,528,18,26]; @symbol_type<0> = [String,528,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 529; @position = 18; @symbol_constdef = [dithering,529,18,27]; @symbol_type<0> = [String,529,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 530; @position = 18; @symbol_constdef = [automaticPalette,530,18,34]; @symbol_type<0> = [String,530,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 533; @symbol_moduledef = [confirmation_loc__hint_keep,533,15,42]; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 533; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 534; @position = 18; @symbol_constdef = [x,534,18,19]; @symbol_type<0> = [Number,534,23,29]; ]
+            const x as Number = 372;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 535; @position = 18; @symbol_constdef = [y,535,18,19]; @symbol_type<0> = [Number,535,23,29]; ]
+            const y as Number = 296;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 538; @symbol_moduledef = [confirmation_loc__hint_delete,538,15,44]; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 538; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 539; @position = 18; @symbol_constdef = [x,539,18,19]; @symbol_type<0> = [Number,539,23,29]; ]
+            const x as Number = 362;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 540; @position = 18; @symbol_constdef = [y,540,18,19]; @symbol_type<0> = [Number,540,23,29]; ]
+            const y as Number = 84;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 543; @symbol_moduledef = [system_icon_positive__hint_action_menu,543,15,53]; ]
+        module system_icon_positive__hint_action_menu {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 543; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 544; @position = 18; @symbol_constdef = [exclude,544,18,25]; @symbol_type<0> = [Boolean,544,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 547; @symbol_moduledef = [system_icon_positive__hint_button_right_middle,547,15,61]; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 547; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 548; @position = 18; @symbol_constdef = [exclude,548,18,25]; @symbol_type<0> = [Boolean,548,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 551; @symbol_moduledef = [system_icon_light__hint_button_left_middle,551,15,57]; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 551; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 552; @position = 18; @symbol_constdef = [exclude,552,18,25]; @symbol_type<0> = [Boolean,552,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 555; @symbol_moduledef = [system_icon_dark__hint_button_right_bottom,555,15,57]; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 555; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 556; @position = 18; @symbol_constdef = [filename,556,18,26]; @symbol_type<0> = [String,556,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__hint_button_right_bottom.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 557; @position = 18; @symbol_constdef = [dithering,557,18,27]; @symbol_type<0> = [String,557,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 558; @position = 18; @symbol_constdef = [packingFormat,558,18,31]; @symbol_type<0> = [String,558,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 561; @symbol_moduledef = [system_icon_positive__hint_button_right_bottom,561,15,61]; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 561; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 562; @position = 18; @symbol_constdef = [filename,562,18,26]; @symbol_type<0> = [String,562,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_positive__hint_button_right_bottom.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 563; @position = 18; @symbol_constdef = [dithering,563,18,27]; @symbol_type<0> = [String,563,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 564; @position = 18; @symbol_constdef = [packingFormat,564,18,31]; @symbol_type<0> = [String,564,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 567; @symbol_moduledef = [system_icon_dark__revert,567,15,39]; ]
+        module system_icon_dark__revert {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 567; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 568; @position = 18; @symbol_constdef = [filename,568,18,26]; @symbol_type<0> = [String,568,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__revert.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 569; @position = 18; @symbol_constdef = [compress,569,18,26]; @symbol_type<0> = [String,569,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 570; @position = 18; @symbol_constdef = [dithering,570,18,27]; @symbol_type<0> = [String,570,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 571; @position = 18; @symbol_constdef = [automaticPalette,571,18,34]; @symbol_type<0> = [String,571,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 574; @symbol_moduledef = [confirmation_icon_light__hint_delete,574,15,51]; ]
+        module confirmation_icon_light__hint_delete {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 574; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 575; @position = 18; @symbol_constdef = [filename,575,18,26]; @symbol_type<0> = [String,575,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 576; @position = 18; @symbol_constdef = [dithering,576,18,27]; @symbol_type<0> = [String,576,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 577; @position = 18; @symbol_constdef = [packingFormat,577,18,31]; @symbol_type<0> = [String,577,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 580; @symbol_moduledef = [system_icon_dark__question,580,15,41]; ]
+        module system_icon_dark__question {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 580; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 581; @position = 18; @symbol_constdef = [filename,581,18,26]; @symbol_type<0> = [String,581,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__question.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 582; @position = 18; @symbol_constdef = [compress,582,18,26]; @symbol_type<0> = [String,582,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 583; @position = 18; @symbol_constdef = [dithering,583,18,27]; @symbol_type<0> = [String,583,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 584; @position = 18; @symbol_constdef = [automaticPalette,584,18,34]; @symbol_type<0> = [String,584,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 587; @symbol_moduledef = [system_icon_light__discard,587,15,41]; ]
+        module system_icon_light__discard {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 587; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 588; @position = 18; @symbol_constdef = [filename,588,18,26]; @symbol_type<0> = [String,588,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__discard.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 589; @position = 18; @symbol_constdef = [compress,589,18,26]; @symbol_type<0> = [String,589,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 590; @position = 18; @symbol_constdef = [dithering,590,18,27]; @symbol_type<0> = [String,590,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 591; @position = 18; @symbol_constdef = [automaticPalette,591,18,34]; @symbol_type<0> = [String,591,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 594; @symbol_moduledef = [device_info,594,15,26]; ]
+        module device_info {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 594; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 596 18 ]
+                symbol [ Toybox %tmp.51 596 32 38 ];
+                %tmp.51 = getv ? :Toybox;
+                symbol [ System %tmp.52 596 39 45 ];
+                %tmp.52 = getv %tmp.51 :System;
+                symbol [ SCREEN_SHAPE_ROUND %tmp.53 596 46 64 ];
+                %tmp.53 = getv %tmp.52 :SCREEN_SHAPE_ROUND;
+                putv self :screenShape %tmp.53;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 595; @position = 18; @symbol_constdef = [screenWidth,595,18,29]; @symbol_type<0> = [Number,595,33,39]; ]
+            const screenWidth as Number = 454;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 596; @position = 18; @symbol_constdef = [screenShape,596,18,29]; ]
+            const screenShape;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 597; @position = 18; @symbol_constdef = [hasNightMode,597,18,30]; @symbol_type<0> = [Boolean,597,34,41]; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 598; @position = 18; @symbol_constdef = [hasGpu,598,18,24]; @symbol_type<0> = [Boolean,598,28,35]; ]
+            const hasGpu as Boolean = true;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 599; @position = 18; @symbol_constdef = [screenHeight,599,18,30]; @symbol_type<0> = [Number,599,34,40]; ]
+            const screenHeight as Number = 454;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 600; @position = 18; @symbol_constdef = [hasTouchScreen,600,18,32]; @symbol_type<0> = [Boolean,600,36,43]; ]
+            const hasTouchScreen as Boolean = true;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 601; @position = 18; @symbol_constdef = [hasEnhancedReadabilityMode,601,18,44]; @symbol_type<0> = [Boolean,601,48,55]; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 604; @symbol_moduledef = [confirmation_icon_dark__hint_confirm,604,15,51]; ]
+        module confirmation_icon_dark__hint_confirm {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 604; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 605; @position = 18; @symbol_constdef = [filename,605,18,26]; @symbol_type<0> = [String,605,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 606; @position = 18; @symbol_constdef = [dithering,606,18,27]; @symbol_type<0> = [String,606,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 607; @position = 18; @symbol_constdef = [packingFormat,607,18,31]; @symbol_type<0> = [String,607,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 610; @symbol_moduledef = [prompt_font__body_no_title,610,15,41]; ]
+        module prompt_font__body_no_title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 610; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 611 18 ]
+                symbol [ Graphics %tmp.54 611 34 42 ];
+                %tmp.54 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.55 611 43 62 ];
+                %tmp.55 = getv %tmp.54 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.56 611 63 71 ];
+                %tmp.56 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.57 611 72 92 ];
+                %tmp.57 = getv %tmp.56 :TEXT_JUSTIFY_VCENTER;
+                %tmp.58 = bitor %tmp.55 %tmp.57;
+                putv self :justification %tmp.58;
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 612 18 ]
+                symbol [ Graphics %tmp.59 612 25 33 ];
+                %tmp.59 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.60 612 34 43 ];
+                %tmp.60 = getv %tmp.59 :FONT_TINY;
+                putv self :font %tmp.60;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 611; @position = 18; @symbol_constdef = [justification,611,18,31]; ]
+            const justification;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 612; @position = 18; @symbol_constdef = [font,612,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 615; @symbol_moduledef = [prompt_size__title_icon,615,15,38]; ]
+        module prompt_size__title_icon {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 615; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 616; @position = 18; @symbol_constdef = [scaleX,616,18,24]; @symbol_type<0> = [Float,616,28,33]; ]
+            const scaleX as Float = 0.14;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 617; @position = 18; @symbol_constdef = [scaleRelativeTo,617,18,33]; @symbol_type<0> = [String,617,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 620; @symbol_moduledef = [system_icon_dark__warning,620,15,40]; ]
+        module system_icon_dark__warning {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 620; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 621; @position = 18; @symbol_constdef = [filename,621,18,26]; @symbol_type<0> = [String,621,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_dark__warning.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 622; @position = 18; @symbol_constdef = [compress,622,18,26]; @symbol_type<0> = [String,622,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 623; @position = 18; @symbol_constdef = [dithering,623,18,27]; @symbol_type<0> = [String,623,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 624; @position = 18; @symbol_constdef = [automaticPalette,624,18,34]; @symbol_type<0> = [String,624,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 627; @symbol_moduledef = [prompt_loc__title_icon,627,15,37]; ]
+        module prompt_loc__title_icon {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 627; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 628; @position = 18; @symbol_constdef = [x,628,18,19]; @symbol_type<0> = [Number,628,23,29]; ]
+            const x as Number = 227;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 629; @position = 18; @symbol_constdef = [y,629,18,19]; @symbol_type<0> = [Number,629,23,29]; ]
+            const y as Number = 45;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 630; @position = 18; @symbol_constdef = [horizontalJustification,630,18,41]; @symbol_type<0> = [String,630,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 631; @position = 18; @symbol_constdef = [verticalJustification,631,18,39]; @symbol_type<0> = [String,631,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 634; @symbol_moduledef = [prompt_font_enhanced_readability__title,634,15,54]; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 634; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 635; @position = 18; @symbol_constdef = [exclude,635,18,25]; @symbol_type<0> = [Boolean,635,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 638; @symbol_moduledef = [prompt_color_dark__body,638,15,38]; ]
+        module prompt_color_dark__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 638; ]
+            <init> {
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen" 640 18 ]
+                symbol [ Graphics %tmp.61 640 31 39 ];
+                %tmp.61 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.62 640 40 57 ];
+                %tmp.62 = getv %tmp.61 :COLOR_TRANSPARENT;
+                putv self :background %tmp.62;
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 639; @position = 18; @symbol_constdef = [color,639,18,23]; @symbol_type<0> = [Number,639,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 640; @position = 18; @symbol_constdef = [background,640,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 643; @symbol_moduledef = [confirmation_icon__hint_delete,643,15,45]; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 643; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 644; @position = 18; @symbol_constdef = [filename,644,18,26]; @symbol_type<0> = [String,644,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 645; @position = 18; @symbol_constdef = [dithering,645,18,27]; @symbol_type<0> = [String,645,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 646; @position = 18; @symbol_constdef = [packingFormat,646,18,31]; @symbol_type<0> = [String,646,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 649; @symbol_moduledef = [system_icon_light__hint_button_right_top,649,15,55]; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 649; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 650; @position = 18; @symbol_constdef = [filename,650,18,26]; @symbol_type<0> = [String,650,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 651; @position = 18; @symbol_constdef = [dithering,651,18,27]; @symbol_type<0> = [String,651,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 652; @position = 18; @symbol_constdef = [packingFormat,652,18,31]; @symbol_type<0> = [String,652,35,41]; ]
+            const packingFormat as String = "png";
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 655; @symbol_moduledef = [confirmation_size__body,655,15,38]; ]
+        module confirmation_size__body {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 655; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 656; @position = 18; @symbol_constdef = [width,656,18,23]; @symbol_type<0> = [Number,656,27,33]; ]
+            const width as Number = 269;
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 657; @position = 18; @symbol_constdef = [height,657,18,24]; @symbol_type<0> = [Number,657,28,34]; ]
+            const height as Number = 272;
+        }
+        [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 660; @symbol_moduledef = [system_icon_positive__check,660,15,42]; ]
+        module system_icon_positive__check {
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 660; ]
+            <init> {
+            }
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 661; @position = 18; @symbol_constdef = [filename,661,18,26]; @symbol_type<0> = [String,661,30,36]; ]
+            const filename as String = "/Users/harpreetsingh/Library/Application Support/Garmin/ConnectIQ/Devices/venu445mm/system_icon_positive__check.svg";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 662; @position = 18; @symbol_constdef = [dithering,662,18,27]; @symbol_type<0> = [String,662,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 663; @position = 18; @symbol_constdef = [packingFormat,663,18,31]; @symbol_type<0> = [String,663,35,41]; ]
+            const packingFormat as String = "png";
+        }
+    }
+}
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/gen/006-B4643-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}

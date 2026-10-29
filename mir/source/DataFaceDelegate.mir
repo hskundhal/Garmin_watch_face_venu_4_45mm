@@ -1,0 +1,100 @@
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 5; @symbol_classdef = [DataFaceDelegate,5,6,22]; @symbol_extends<0> = [WatchUi,5,31,38]; @symbol_extends<1> = [WatchFaceDelegate,5,39,56]; ]
+class DataFaceDelegate extends WatchUi.WatchFaceDelegate {
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 6; @position = 16; @symbol_vardef = [_view,6,16,21]; @symbol_type<0> = [DataFaceView,6,25,37]; ]
+    private
+    var _view as DataFaceView;
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; @symbol_param<0> = [view,8,24,28]; @symbol_param<0>_type<0> = [DataFaceView,8,32,44]; ]
+    function initialize(view as DataFaceView) as Void {
+_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_8_46_11_4_start:
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc" 9 8 ]
+        symbol [ WatchFaceDelegate %tmp.2 9 8 25 ];
+        %tmp.2 = getv ? :WatchFaceDelegate;
+        symbol [ initialize %tmp.3 9 26 36 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc" 10 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 10 16 20 ];
+        symbol [ _view ? 10 8 13 ];
+        putv self :_view %tmp.4;
+_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_8_46_11_4_stop:
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 14; @symbol_functiondef = [onPress,14,13,20]; @symbol_param<0> = [clickEvent,14,21,31]; @symbol_param<0>_type<0> = [WatchUi,14,35,42]; @symbol_param<0>_type<1> = [ClickEvent,14,43,53]; @symbol_return<0> = [Lang,14,58,62]; @symbol_return<1> = [Boolean,14,63,70]; ]
+    function onPress(clickEvent as WatchUi.ClickEvent) as Lang.Boolean {
+_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_14_71_17_4_start:
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc" 15 8 ]
+        [ "_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_14_71_17_4_start" "_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_14_71_17_4_stop" ]
+        %coords.1 = local;
+        symbol [ coords %coords.1 15 12 18 ];
+        %tmp.1 = lgetv %clickEvent;
+        symbol [ clickEvent %tmp.1 15 21 31 ];
+        symbol [ getCoordinates %tmp.2 15 32 46 ];
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %coords.1 %tmp.3;
+        symbol [ coords %coords.1 15 12 18 ];
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc" 16 8 ]
+        symbol [ _view %tmp.5 16 15 20 ];
+        %tmp.5 = getv ? :_view;
+        symbol [ handlePress %tmp.6 16 21 32 ];
+        %tmp.6 = getv function %tmp.5 :handlePress;
+        %tmp.7 = lgetv %coords.1;
+        symbol [ coords %tmp.7 16 33 39 ];
+        %tmp.8 = 0;
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        %tmp.10 = lgetv %coords.1;
+        symbol [ coords %tmp.10 16 44 50 ];
+        %tmp.11 = 1;
+        %tmp.12 = agetv %tmp.10 %tmp.11;
+        %tmp.13 = invoke %tmp.5 %tmp.6(%tmp.9, %tmp.12);
+        ret %tmp.13;
+_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_14_71_17_4_stop:
+    }
+    [ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 20; @symbol_functiondef = [onTap,20,13,18]; @symbol_param<0> = [clickEvent,20,19,29]; @symbol_param<0>_type<0> = [WatchUi,20,33,40]; @symbol_param<0>_type<1> = [ClickEvent,20,41,51]; @symbol_return<0> = [Lang,20,56,60]; @symbol_return<1> = [Boolean,20,61,68]; ]
+    function onTap(clickEvent as WatchUi.ClickEvent) as Lang.Boolean {
+_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_20_69_23_4_start:
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc" 21 8 ]
+        [ "_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_20_69_23_4_start" "_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_20_69_23_4_stop" ]
+        %coords.1 = local;
+        symbol [ coords %coords.1 21 12 18 ];
+        %tmp.1 = lgetv %clickEvent;
+        symbol [ clickEvent %tmp.1 21 21 31 ];
+        symbol [ getCoordinates %tmp.2 21 32 46 ];
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %coords.1 %tmp.3;
+        symbol [ coords %coords.1 21 12 18 ];
+[ "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc" 22 8 ]
+        symbol [ _view %tmp.5 22 15 20 ];
+        %tmp.5 = getv ? :_view;
+        symbol [ handlePress %tmp.6 22 21 32 ];
+        %tmp.6 = getv function %tmp.5 :handlePress;
+        %tmp.7 = lgetv %coords.1;
+        symbol [ coords %tmp.7 22 33 39 ];
+        %tmp.8 = 0;
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        %tmp.10 = lgetv %coords.1;
+        symbol [ coords %tmp.10 22 44 50 ];
+        %tmp.11 = 1;
+        %tmp.12 = agetv %tmp.10 %tmp.11;
+        %tmp.13 = invoke %tmp.5 %tmp.6(%tmp.9, %tmp.12);
+        ret %tmp.13;
+_Users_harpreetsingh_PycharmProjects_garmin_app_source_DataFaceDelegate_mc_20_69_23_4_stop:
+    }
+}
+[ @file = "/Users/harpreetsingh/PycharmProjects/garmin_app/source/DataFaceDelegate.mc"; @line = 1; ]
+<init> {
+}

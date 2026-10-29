@@ -292,6 +292,29 @@ class DataFaceView extends WatchUi.WatchFace {
         return null;
     }
 
+    // Stress: tries sources from most→least real-time
+    // 1. ActivityMonitor.Info.stressScore  (API 4.1.0+, live)
+    // 2. Complications value               (pushed on change)
+    // 3. SensorHistory newest sample       (3-4 min cadence, last resort)
+    function stressScore() as Lang.Number? {
+        // Source 1: live stressScore on ActivityMonitor.Info (API 4.1+)
+        if (ActivityMonitor has :getInfo) {
+            var am = ActivityMonitor.getInfo();
+            if (am != null && (am has :stressScore) && am.stressScore != null) {
+                var s = am.stressScore;
+                if (s >= 0 && s <= 100) { return s; }
+            }
+        }
+        // Source 2: complication value (subscribed → pushed on each measurement)
+        var cv = compValue(_stressId);
+        if (cv != null) {
+            var s = cv.toNumber();
+            if (s >= 0 && s <= 100) { return s; }
+        }
+        // Source 3: SensorHistory newest sample (slowest cadence, fallback)
+        return latestSensor(:stress);
+    }
+
     function heartRate() {
         var info = Activity.getActivityInfo();
         if (info != null && info.currentHeartRate != null) {
@@ -369,11 +392,11 @@ class DataFaceView extends WatchUi.WatchFace {
         if (bb == null) { bb = 78; } // fallback demo default
         var hrv = heartRate();
         if (hrv == null) { hrv = 80; } // fallback demo default
-        var st = latestSensor(:stress);
+        // Stress: multi-source (live ActivityMonitor > complication > SensorHistory)
+        var st = stressScore();
+        // Readiness: prefer dedicated complication, fall back to stress, then null (shows --)
         var ready = compValue(_readyId);
-        if (ready == null) {
-            ready = (st != null) ? st : 85;
-        }
+        if (ready == null) { ready = st; }
 
         // 1. Outer Bezel Ticks & Cardinal Accents
         drawBezelAccents(dc, cx, cy, w * 0.47);
