@@ -646,10 +646,11 @@ class DataFaceView extends WatchUi.WatchFace {
     // ------------------------------------------------------------------
     function drawTopDate(dc, cx, y) {
         var info = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
-        var dateStr = (info.day_of_week + " " + info.day.format("%02d") + " " + info.month + ".").toUpper();
+        // Format: "Thu 29 Oct"
+        var dateStr = info.day_of_week + " " + info.day.toString() + " " + info.month;
 
         dc.setColor(C_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, y, Graphics.FONT_TINY, dateStr,
+        dc.drawText(cx, y, Graphics.FONT_XTINY, dateStr,
                     Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
 
